@@ -339,7 +339,7 @@ body {
   font-size:.6rem; font-weight:500;
   letter-spacing:.26em; text-transform:uppercase;
   color:var(--terra); margin-bottom:2.5rem;
-  opacity:0; animation:rise .8s .1s forwards;
+  animation:rise .8s .1s forwards;
 }
 .hero-flag-dot {
   width:8px; height:8px; border-radius:50%;
@@ -353,7 +353,7 @@ body {
   font-size:clamp(2.8rem,5vw,5.8rem);
   font-weight:400; line-height:1.05;
   color:var(--petrole);
-  opacity:0; animation:rise .9s .25s forwards;
+  animation:rise .9s .25s forwards;
 }
 .hero-h1 em { font-style:italic; color:var(--terra); }
 
@@ -361,19 +361,19 @@ body {
   width:44px; height:2px;
   background:linear-gradient(90deg,var(--terra),var(--sauge));
   margin:2.2rem 0;
-  opacity:0; animation:rise .8s .45s forwards;
+  animation:rise .8s .45s forwards;
 }
 
 .hero-intro {
   font-size:1rem; font-weight:300; line-height:1.82;
   color:var(--text-body); max-width:460px;
-  opacity:0; animation:rise .8s .6s forwards;
+  animation:rise .8s .6s forwards;
 }
 
 /* 3 reassurance pillars */
 .hero-pillars {
   display:flex; gap:1.5rem; margin-top:2rem;
-  opacity:0; animation:rise .8s .75s forwards;
+  animation:rise .8s .75s forwards;
 }
 .pillar {
   display:flex; align-items:center; gap:.6rem;
@@ -389,7 +389,7 @@ body {
 .hero-degrees {
   margin-top:2rem;
   display:flex; flex-direction:column; gap:.5rem;
-  opacity:0; animation:rise .8s .88s forwards;
+  animation:rise .8s .88s forwards;
 }
 .degree {
   display:flex; align-items:center; gap:.7rem;
@@ -402,7 +402,7 @@ body {
 
 .hero-actions {
   display:flex; gap:1.2rem; align-items:center; margin-top:2.8rem;
-  opacity:0; animation:rise .8s 1s forwards;
+  animation:rise .8s 1s forwards;
 }
 
 .btn-primary {
@@ -436,7 +436,7 @@ body {
   position:relative; overflow:hidden;
   display:flex; flex-direction:column;
   justify-content:flex-end;
-  opacity:0; animation:rise 1s .4s forwards;
+  animation:rise 1s .4s forwards;
 }
 
 .photo-area {
@@ -946,7 +946,7 @@ footer {
   from { opacity:0; transform:translateY(20px); }
   to   { opacity:1; transform:translateY(0); }
 }
-.reveal { opacity:0; transform:translateY(26px); transition:opacity .75s ease, transform .75s ease; }
+.reveal { opacity:1; transform:translateY(0); transition:opacity .75s ease, transform .75s ease; }
 .reveal.in { opacity:1; transform:translateY(0); }
 
 /* ════════════════════════════════════════
@@ -1575,7 +1575,7 @@ footer {
         </div>
         <div class="ct-item">
           <div class="ct-label">Correo electrónico</div>
-          <div class="ct-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="573222393e3432173a38392332252522353e382538343f327934383a">[email&#160;protected]</a></div>
+          <div class="ct-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9ccdcc7c0cacce9c4c6c7ddccdbdbdccbc0c6dbc6cac1cc87cac6c4">[email&#160;protected]</a></div>
           <div class="ct-sub2">Respuesta en menos de 24 h</div>
         </div>
         <div class="ct-item">
@@ -1687,10 +1687,15 @@ document.querySelectorAll('[href^="#"]').forEach(a=>{
 });
 
 // ── REVEAL ON SCROLL
-const ro=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(r=>ro.observe(r));
+// Add 'in' class to all reveal elements immediately as fallback
+document.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));
+// Also use IntersectionObserver for enhanced experience
+if('IntersectionObserver' in window){
+  const ro=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  },{threshold:.05});
+  document.querySelectorAll('.reveal').forEach(r=>ro.observe(r));
+}
 
 // ── LANG TOGGLE (visual only — full bilingual requires server-side routing)
 docum
