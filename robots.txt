@@ -1,15 +1,4 @@
-# robots.txt — MODO DESARROLLO
-# El sitio está en construcción. Google no indexa aún.
-# Cuando el sitio esté listo, reemplazar por la versión de producción.
-
 User-agent: *
-Disallow: /
+Allow: /
 
-# ════════════════════════════════════════
-# VERSIÓN PRODUCCIÓN (usar cuando el sitio esté listo)
-# Reemplazar TODO el contenido de este archivo por:
-#
-# User-agent: *
-# Allow: /
-# Sitemap: https://monterrubioroche.com/sitemap.xml
-# ════════════════════════════════════════
+Sitemap: https://monterrubiopsicologa.com/sitemap.xml
