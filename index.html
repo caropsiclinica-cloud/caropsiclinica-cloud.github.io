@@ -85,7 +85,7 @@
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ════════════════════════════════════════
@@ -193,20 +193,45 @@ body {
 }
 
 .sb-brand {
-  padding: 2.8rem 2.5rem 2rem;
+  padding: 2.2rem 2rem 1.8rem;
   border-bottom: 1px solid rgba(255,255,255,.07);
+  display:flex; align-items:center; gap:18px;
+}
+/* Ψ doré sidebar */
+.sb-psi { flex-shrink:0; filter:drop-shadow(0 0 5px rgba(212,175,55,.25)); }
+.sb-text { display:flex; flex-direction:column; }
+.sb-sep-v {
+  width:0.5px; height:64px;
+  background:linear-gradient(180deg,transparent,rgba(212,175,55,.3),transparent);
+  flex-shrink:0;
 }
 .sb-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 400;
-  color: var(--ivoire); line-height:1.35;
+  font-family: 'Cinzel', serif;
+  font-size: .78rem; font-weight: 400; letter-spacing:.18em;
+  color: var(--ivoire); line-height:1.4;
 }
-.sb-name em { font-style:italic; color:var(--sauge-lt); display:block; }
+.sb-name em {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic; font-size:.85rem; letter-spacing:.1em;
+  color:var(--sauge-lt); display:block;
+}
+.sb-prenom {
+  font-family:'Cormorant Garamond',serif;
+  font-size:.65rem; font-weight:300; letter-spacing:.22em;
+  text-transform:uppercase; color:rgba(212,175,55,.55);
+  margin-bottom:3px;
+}
 .sb-role {
-  margin-top:.6rem;
-  font-size:.72rem; font-weight:400;
-  letter-spacing:.18em; text-transform:uppercase;
-  color: rgba(247,243,237,.5);
+  margin-top:.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem; font-style:italic; font-weight:300;
+  letter-spacing:.1em;
+  color: rgba(212,175,55,.45);
+}
+.sb-rule {
+  width:100%; height:0.4px;
+  background:linear-gradient(90deg,rgba(212,175,55,.4),transparent);
+  margin:.4rem 0;
 }
 .sb-langs {
   margin-top:.9rem;
@@ -1317,12 +1342,38 @@ footer {
 <!-- SIDEBAR -->
 <aside class="sidebar" role="navigation" aria-label="Navegación principal">
   <div class="sb-brand">
-    <div class="sb-name">Eunice Carolina<br><em>Monterrubio Roché</em></div>
-    <div class="sb-role"><span class="es-text">Psicóloga Clínica · CDMX</span><span class="fr-text">Psychologue Clinicienne · CDMX</span></div>
-    <div class="sb-langs">
-      <span class="sb-lang active" tabindex="0" onclick="setLang('es')">ES</span>
-      <span class="sb-lang" tabindex="0" onclick="setLang('fr')">FR</span>
+    <!-- Ψ doré -->
+    <svg class="sb-psi" width="34" height="42" viewBox="0 0 80 100" fill="none">
+      <defs>
+        <linearGradient id="sbgold" x1="40" y1="0" x2="40" y2="100" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#fff0a0"/>
+          <stop offset="35%"  stop-color="#D4AF37"/>
+          <stop offset="100%" stop-color="#8B6914"/>
+        </linearGradient>
+      </defs>
+      <path d="M 16 10 C 4 24, 4 58, 16 70 C 23 77, 31 80, 40 80 C 49 80, 57 77, 64 70 C 76 58, 76 24, 64 10"
+        stroke="url(#sbgold)" stroke-width="2.2" fill="none" stroke-linecap="butt"/>
+      <line x1="10" y1="10" x2="22" y2="10" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="58" y1="10" x2="70" y2="10" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="40" y1="5"  x2="40" y2="95" stroke="url(#sbgold)" stroke-width="2.2" stroke-linecap="butt"/>
+      <line x1="34" y1="5"  x2="46" y2="5"  stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="24" y1="95" x2="56" y2="95" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+      <line x1="29" y1="90" x2="51" y2="90" stroke="rgba(212,175,55,0.3)" stroke-width="0.9" stroke-linecap="round"/>
+    </svg>
+
+    <div class="sb-sep-v"></div>
+
+    <div class="sb-text">
+      <span class="sb-prenom">Carolina</span>
+      <div class="sb-name">Monterrubio<em>Roché</em></div>
+      <div class="sb-rule"></div>
+      <div class="sb-role"><span class="es-text">Psicóloga Clínica · CDMX</span><span class="fr-text">Psychologue Clinicienne · CDMX</span></div>
     </div>
+  </div>
+
+  <div class="sb-langs" style="padding:.6rem 2rem .4rem; display:flex; gap:.4rem;">
+    <span class="sb-lang active" tabindex="0" onclick="setLang('es')">ES</span>
+    <span class="sb-lang" tabindex="0" onclick="setLang('fr')">FR</span>
   </div>
 
   <nav class="sb-nav">
@@ -1924,7 +1975,7 @@ footer {
         <p class="ct-sub"><span class="es-text">Cada proceso terapéutico empieza con un primer contacto. Escríbeme para coordinar una primera sesión de evaluación sin compromiso.</span><span class="fr-text">Tout processus thérapeutique commence par un premier contact. Écrivez-moi pour coordonner une première séance d'évaluation sans engagement.</span></p>
 
         <div class="privacy-note">
-          <span class="es-text">🔒 <strong>Nota de privacidad:</strong> No incluyas información clínica sensible en este formulario. Toda la información recibida es confidencial y tratada conforme a la <a href="#" style="color:var(--terra);">LFPDPPP</a>.</span><span class="fr-text">🔒 <strong>Note de confidentialité :</strong> N'incluez pas d'informations cliniques sensibles dans ce formulaire. Toutes les informations reçues sont confidentielles et traitées conformément à la <a href="#" style="color:var(--terra);">LFPDPPP</a>.</span>
+          <span class="es-text">🔒 <strong>Nota de privacidad:</strong> No incluyas información clínica sensible en este formulario. Toda la información recibida es confidencial y tratada conforme a la <a href="privacy.html" style="color:var(--terra);" target="_blank">LFPDPPP</a>.</span><span class="fr-text">🔒 <strong>Note de confidentialité :</strong> N'incluez pas d'informations cliniques sensibles dans ce formulaire. Toutes les informations reçues sont confidentielles et traitées conformément à la <a href="privacy.html" style="color:var(--terra);" target="_blank">LFPDPPP</a>.</span>
         </div>
 
         <form class="form" action="https://api.web3forms.com/submit" method="POST" method="POST">
@@ -1957,7 +2008,7 @@ footer {
           </div>
           <label class="fchk">
             <input type="checkbox" required>
-            <span class="es-text">He leído el</span><span class="fr-text">J'ai lu la</span> <a href="#" style="color:var(--terra);"><span class="es-text">aviso de privacidad</span><span class="fr-text">politique de confidentialité</span></a> <span class="es-text">y acepto el tratamiento de mis datos personales.</span><span class="fr-text">et j'accepte le traitement de mes données personnelles.</span>
+            <span class="es-text">He leído el</span><span class="fr-text">J'ai lu la</span> <a href="privacy.html" style="color:var(--terra);" target="_blank"><span class="es-text">aviso de privacidad</span><span class="fr-text">politique de confidentialité</span></a> <span class="es-text">y acepto el tratamiento de mis datos personales.</span><span class="fr-text">et j'accepte le traitement de mes données personnelles.</span>
           </label>
           <input type="hidden" name="access_key" value="225b48df-6d81-4333-a927-2019332b4f16">
           <input type="hidden" name="subject" value="Nueva consulta desde monterrubiopsicologa.com">
@@ -2074,10 +2125,11 @@ footer {
       <div>
         <div class="footer-col-title">Legal</div>
         <div class="footer-links">
-          <a class="footer-link" href="#"><span class="es-text">Aviso de privacidad (LFPDPPP)</span><span class="fr-text">Politique de confidentialité (LFPDPPP)</span></a>
-          <a class="footer-link" href="#"><span class="es-text">Menciones legales</span><span class="fr-text">Mentions légales</span></a>
-          <a class="footer-link" href="#"><span class="es-text">Accesibilidad</span><span class="fr-text">Accessibilité</span></a>
-          <a class="footer-link" href="#">Mapa del sitio</a>
+          <a class="footer-link" href="privacy.html" target="_blank"><span class="es-text">Aviso de privacidad (LFPDPPP)</span><span class="fr-text">Politique de confidentialité (LFPDPPP)</span></a>
+          <a class="footer-link" href="menciones-legales.html" target="_blank"><span class="es-text">Menciones legales</span><span class="fr-text">Mentions légales</span></a>
+          <a class="footer-link" href="accesibilidad.html" target="_blank"><span class="es-text">Accesibilidad</span><span class="fr-text">Accessibilité</span></a>
+          <a class="footer-link" href="sitemap.html" target="_blank">Mapa del sitio</a>
+
           <a class="footer-link" href="https://cedulaprofesional.sep.gob.mx" target="_blank" rel="noopener">Verificar cédula SEP ↗</a>
         </div>
       </div>
@@ -2090,7 +2142,7 @@ footer {
 
 </main>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CURSOR STYLISÉ
 (function(){
   var dot = document.getElementById('curDot');
@@ -2175,16 +2227,17 @@ function setLang(lang) {
       'otro': {es:'Otro', fr:'Autre'},
     };
     Array.from(sel.options).forEach(function(opt) {
-      if (opts[opt.value]) opt.text = opts[opt.value][lang];
+      if (opts[opt.value]) opt.textContent = opts[opt.value][lang];
     });
   }
-  try { localStorage.setItem('sitelang', lang); } catch(e){}
+  localStorage.setItem('lang', lang);
 }
-// Init au chargement
+
+// ── INIT LANGUE
 (function(){
-  var saved = 'es';
-  try { saved = localStorage.getItem('sitelang') || 'es'; } catch(e){}
+  var saved = localStorage.getItem('lang') || 'es';
   setLang(saved);
 })();
 </script>
 </body>
+</html>
