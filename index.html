@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es" dir="ltr" class="lang-es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1175,6 +1175,13 @@ footer {
   line-height: 1.65;
 }
 
+/* ── LANGUE SWITCH */
+.fr-text { display: none; }
+.lang-fr .fr-text { display: inline; }
+.lang-fr .es-text { display: none; }
+.lang-es .es-text { display: inline; }
+.lang-es .fr-text { display: none; }
+
 /* ── GOOGLE MAPS */
 .maps-container {
   margin-top: 3rem;
@@ -1251,13 +1258,13 @@ footer {
 <!-- Floating Social Buttons -->
 <style>
 .float-social { position:fixed; bottom:24px; right:20px; display:flex; flex-direction:column; gap:.5rem; z-index:9000; }
-.float-btn { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.2); transition:transform .25s; position:relative; }
+.float-btn { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.2); transition:transform .25s; position:relative; }
 .float-btn:hover { transform:scale(1.12); }
-.float-btn svg { width:18px; height:18px; fill:white; }
-.float-btn-cal { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.2); transition:transform .25s; position:relative; background:var(--terra); }
+.float-btn svg { width:15px; height:15px; fill:white; }
+.float-btn-cal { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 3px 12px rgba(0,0,0,.2); transition:transform .25s; position:relative; background:var(--terra); }
 .float-btn-cal:hover { transform:scale(1.12); }
-.float-btn-cal svg { width:18px; height:18px; fill:white; }
-.float-tooltip { position:absolute; right:50px; background:#1F2933; color:white; font-size:.72rem; padding:.3rem .65rem; border-radius:4px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; font-family:'Source Sans 3',sans-serif; }
+.float-btn-cal svg { width:15px; height:15px; fill:white; }
+.float-tooltip { position:absolute; right:44px; background:#1F2933; color:white; font-size:.72rem; padding:.3rem .65rem; border-radius:4px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; font-family:'Source Sans 3',sans-serif; }
 .float-btn:hover .float-tooltip, .float-btn-cal:hover .float-tooltip { opacity:1; }
 .float-wa { background:#25D366; }
 .float-ig { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
@@ -1267,8 +1274,8 @@ footer {
 
 <div class="float-social">
   <!-- Calendly -->
-  <a class="float-btn-cal" href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener" aria-label="Agendar consulta">
-    <span class="float-tooltip">Agendar consulta</span>
+  <a class="float-btn-cal" href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener" aria-label="Agenda">
+    <span class="float-tooltip"><span class="es-text">Agendar consulta</span><span class="fr-text">Prendre rendez-vous</span></span>
     <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H5V9h14v12zm0-14H5V5h14v2zM7 11h5v5H7z"/></svg>
   </a>
   <!-- WhatsApp -->
@@ -1291,11 +1298,19 @@ footer {
     <span class="float-tooltip">Google Maps</span>
     <svg viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
   </a>
+  <!-- Contact -->
+  <a class="float-btn" href="#contacto" style="background:var(--petrole);" aria-label="Contacto">
+    <span class="float-tooltip">
+      <span class="es-text">Escribir un mensaje</span>
+      <span class="fr-text">Envoyer un message</span>
+    </span>
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </a>
 </div>
 
 <!-- URGENCY BAR -->
 <div class="urgency-bar" id="urgBar">
-  <span>🆘 En caso de emergencia llama al <strong>911</strong> · Línea de la Vida: <a href="tel:8009112000">800 911 2000</a> · SAPTEL: <a href="tel:5552598121">(55) 5259 8121</a></span>
+  <span><span class="es-text">🆘 En caso de emergencia llama al <strong>911</strong> · Línea de la Vida: <a href="tel:8009112000">800 911 2000</a> · SAPTEL: <a href="tel:5552598121">(55) 5259 8121</a></span><span class="fr-text">🆘 En cas d'urgence appelez le <strong>911</strong> · Línea de la Vida : <a href="tel:8009112000">800 911 2000</a></span></span>
   <button class="urgency-close" onclick="document.getElementById('urgBar').style.display='none'" aria-label="Cerrar">×</button>
 </div>
 
@@ -1303,40 +1318,39 @@ footer {
 <aside class="sidebar" role="navigation" aria-label="Navegación principal">
   <div class="sb-brand">
     <div class="sb-name">Eunice Carolina<br><em>Monterrubio Roché</em></div>
-    <div class="sb-role">Psicóloga Clínica · CDMX</div>
+    <div class="sb-role"><span class="es-text">Psicóloga Clínica · CDMX</span><span class="fr-text">Psychologue Clinicienne · CDMX</span></div>
     <div class="sb-langs">
-      <span class="sb-lang active" tabindex="0">ES</span>
-      <span class="sb-lang" tabindex="0">FR</span>
-
+      <span class="sb-lang active" tabindex="0" onclick="setLang('es')">ES</span>
+      <span class="sb-lang" tabindex="0" onclick="setLang('fr')">FR</span>
     </div>
   </div>
 
   <nav class="sb-nav">
     <a class="sb-link active" href="#hero">
-      <span class="sb-link-n">00</span><span class="sb-link-l">Inicio</span>
+      <span class="sb-link-n">00</span><span class="sb-link-l"><span class="es-text">Inicio</span><span class="fr-text">Accueil</span></span>
     </a>
     <a class="sb-link" href="#pourquoi">
-      <span class="sb-link-n">01</span><span class="sb-link-l">Consultas</span>
+      <span class="sb-link-n">01</span><span class="sb-link-l"><span class="es-text">Consultas</span><span class="fr-text">Consultations</span></span>
     </a>
     <a class="sb-link" href="#approche">
-      <span class="sb-link-n">02</span><span class="sb-link-l">Approche</span>
+      <span class="sb-link-n">02</span><span class="sb-link-l"><span class="es-text">Enfoque</span><span class="fr-text">Approche</span></span>
     </a>
     <a class="sb-link" href="#trayectoria">
-      <span class="sb-link-n">03</span><span class="sb-link-l">Trayectoria</span>
+      <span class="sb-link-n">03</span><span class="sb-link-l"><span class="es-text">Trayectoria</span><span class="fr-text">Parcours</span></span>
     </a>
     <a class="sb-link" href="#tarifs">
-      <span class="sb-link-n">04</span><span class="sb-link-l">Tarifs</span>
+      <span class="sb-link-n">04</span><span class="sb-link-l"><span class="es-text">Honorarios</span><span class="fr-text">Tarifs</span></span>
     </a>
     <a class="sb-link" href="#articles">
-      <span class="sb-link-n">05</span><span class="sb-link-l">Journal</span>
+      <span class="sb-link-n">05</span><span class="sb-link-l"><span class="es-text">Artículos</span><span class="fr-text">Journal</span></span>
     </a>
     <a class="sb-link" href="#contacto">
-      <span class="sb-link-n">06</span><span class="sb-link-l">Contacto</span>
+      <span class="sb-link-n">06</span><span class="sb-link-l"><span class="es-text">Contacto</span><span class="fr-text">Contact</span></span>
     </a>
   </nav>
 
   <div class="sb-foot">
-    <a class="sb-cta" href="#agenda"><span>→ Agendar consulta</span></a>
+    <a class="sb-cta" href="#agenda"><span><span class="es-text">→ Agendar consulta</span><span class="fr-text">→ Prendre rendez-vous</span></span></a>
     <div class="sb-progress"><div class="sb-bar" id="prog"></div></div>
   </div>
 </aside>
@@ -1355,7 +1369,7 @@ footer {
     </svg>
       <div class="hero-flag">
         <div class="hero-flag-dot" aria-hidden="true"></div>
-        Psicóloga Clínica · Ciudad de México
+        <span class="es-text">Psicóloga Clínica · Ciudad de México</span><span class="fr-text">Psychologue Clinicienne · Ciudad de México</span>
       </div>
 
       <h1 class="hero-h1">
@@ -1368,24 +1382,24 @@ footer {
       <div class="hero-rule" aria-hidden="true"></div>
 
       <p class="hero-intro">
-        Un espacio de escucha clínica, bilingüe y estructurado — para adultos que buscan comprender y transformar su sufrimiento psíquico, con una psicóloga formada en Francia y arraigada en México.
+        <span class="es-text">Un espacio de escucha clínica, bilingüe y estructurado — para adultos que buscan comprender y transformar su sufrimiento psíquico, con una psicóloga formada en Francia y arraigada en México.</span><span class="fr-text">Un espace d'écoute clinique, bilingue et structuré — pour les adultes qui cherchent à comprendre et transformer leur souffrance psychique, avec une psychologue formée en France et ancrée au Mexique.</span>
       </p>
 
       <div class="hero-pillars" aria-label="Compromisos">
-        <div class="pillar"><div class="pillar-icon" aria-hidden="true">🔒</div>Confidencial</div>
-        <div class="pillar"><div class="pillar-icon" aria-hidden="true">📐</div>Cadre clair</div>
-        <div class="pillar"><div class="pillar-icon" aria-hidden="true">🌍</div>Bilingüe FR · ES</div>
+        <div class="pillar"><div class="pillar-icon" aria-hidden="true">🔒</div><span class="es-text">Confidencial</span><span class="fr-text">Confidentiel</span></div>
+        <div class="pillar"><div class="pillar-icon" aria-hidden="true">📐</div><span class="es-text">Marco claro</span><span class="fr-text">Cadre clair</span></div>
+        <div class="pillar"><div class="pillar-icon" aria-hidden="true">🌍</div><span class="es-text">Bilingüe FR · ES</span><span class="fr-text">Bilingue FR · ES</span></div>
       </div>
 
       <div class="hero-degrees" aria-label="Formación">
-        <div class="degree">MSc Psicología Clínica — Université Paris VIII</div>
-        <div class="degree">MSc Psicoanálisis — Université Paris VIII</div>
-        <div class="degree">Lic. Sociología — UAM Ciudad de México</div>
+        <div class="degree"><span class="es-text">MSc Psicología Clínica — Université Paris VIII</span><span class="fr-text">MSc Psychologie Clinique — Université Paris VIII</span></div>
+        <div class="degree"><span class="es-text">MSc Psicoanálisis — Université Paris VIII</span><span class="fr-text">MSc Psychanalyse — Université Paris VIII</span></div>
+        <div class="degree"><span class="es-text">Lic. Sociología — UAM Ciudad de México</span><span class="fr-text">Lic. Sociologie — UAM Ciudad de México</span></div>
       </div>
 
       <div class="hero-actions">
-        <a class="btn-primary" href="#agenda"><span>Agendar consulta</span></a>
-        <a class="btn-ghost" href="#pourquoi">Saber más</a>
+        <a class="btn-primary" href="#agenda"><span><span class="es-text">Agendar consulta</span><span class="fr-text">Prendre rendez-vous</span></span></a>
+        <a class="btn-ghost" href="#pourquoi"><span class="es-text">Saber más</span><span class="fr-text">En savoir plus</span></a>
       </div>
     </div>
 
@@ -1394,56 +1408,56 @@ footer {
         <div class="photo-box">
           <div class="photo-box-inner">
             <div class="photo-hint-icon">🖼</div>
-            <div class="photo-hint-txt">Tu fotografía<br>profesional aquí</div>
+            <div class="photo-hint-txt"><span class="es-text">Tu fotografía<br>profesional aquí</span><span class="fr-text">Votre photo<br>professionnelle ici</span></div>
           </div>
         </div>
       </div>
       <div class="photo-caption">
         <div class="photo-cap-name">Eunice Carolina Monterrubio Roché</div>
-        <div class="photo-cap-role">Psicóloga Clínica · CDMX · ES · FR</div>
+        <div class="photo-cap-role"><span class="es-text">Psicóloga Clínica · CDMX · ES · FR</span><span class="fr-text">Psychologue Clinicienne · CDMX · FR · ES</span></div>
       </div>
     </div>
   </section>
 
   <!-- ════ POUR QUI ════ -->
   <section class="section" id="pourquoi">
-    <div class="sec-eyebrow reveal">Consultas</div>
-    <h2 class="sec-title reveal">¿Por qué <em>consultar?</em></h2>
+    <div class="sec-eyebrow reveal"><span class="es-text">Consultas</span><span class="fr-text">Consultations</span></div>
+    <h2 class="sec-title reveal"><span class="es-text">¿Por qué <em>consultar?</em></span><span class="fr-text">Pourquoi <em>consulter ?</em></span></h2>
     <div class="divider reveal"></div>
     <p class="reveal" style="font-size:.85rem;color:var(--text-body);max-width:580px;line-height:1.82;">
-      Consultar a un psicólogo no requiere una "crisis". Basta con sentir que algo pesa, que ciertos patrones se repiten, o que es momento de entenderse mejor.
+      <span class="es-text">Consultar a un psicólogo no requiere una "crisis". Basta con sentir que algo pesa, que ciertos patrones se repiten, o que es momento de entenderse mejor.</span><span class="fr-text">Consulter un psychologue ne nécessite pas de "crise". Il suffit de sentir que quelque chose pèse, que certains schémas se répètent, ou qu'il est temps de mieux se comprendre.</span>
     </p>
 
     <div class="motifs-grid reveal">
       <div class="motif-item">
         <span class="motif-icon">🌊</span>
-        <div class="motif-title">Ansiedad & angustia</div>
-        <p class="motif-desc">Rumia, tensión persistente, ataques de pánico, dificultad para dormir o concentrarse.</p>
+        <div class="motif-title"><span class="es-text">Ansiedad & angustia</span><span class="fr-text">Anxiété & angoisse</span></div>
+        <p class="motif-desc"><span class="es-text">Rumia, tensión persistente, ataques de pánico, dificultad para dormir o concentrarse.</span><span class="fr-text">Rumination, tension persistante, attaques de panique, difficultés à dormir ou à se concentrer.</span></p>
       </div>
       <div class="motif-item">
         <span class="motif-icon">🌧</span>
-        <div class="motif-title">Episodios depresivos</div>
-        <p class="motif-desc">Pérdida de motivación, tristeza duradera, agotamiento emocional, dificultad para proyectarse.</p>
+        <div class="motif-title"><span class="es-text">Episodios depresivos</span><span class="fr-text">Épisodes dépressifs</span></div>
+        <p class="motif-desc"><span class="es-text">Pérdida de motivación, tristeza duradera, agotamiento emocional, dificultad para proyectarse.</span><span class="fr-text">Perte de motivation, tristesse durable, épuisement émotionnel, difficulté à se projeter.</span></p>
       </div>
       <div class="motif-item">
         <span class="motif-icon">🔥</span>
-        <div class="motif-title">Burnout & trabajo</div>
-        <p class="motif-desc">Presión laboral extrema, perfeccionismo, dificultad para poner límites, agotamiento total.</p>
+        <div class="motif-title"><span class="es-text">Burnout & trabajo</span><span class="fr-text">Burnout & travail</span></div>
+        <p class="motif-desc"><span class="es-text">Presión laboral extrema, perfeccionismo, dificultad para poner límites, agotamiento total.</span><span class="fr-text">Pression professionnelle extrême, perfectionnisme, difficulté à poser des limites, épuisement total.</span></p>
       </div>
       <div class="motif-item">
         <span class="motif-icon">💔</span>
-        <div class="motif-title">Duelo & separación</div>
-        <p class="motif-desc">Pérdida de un ser querido, ruptura amorosa, final de un ciclo vital o profesional.</p>
+        <div class="motif-title"><span class="es-text">Duelo & separación</span><span class="fr-text">Deuil & séparation</span></div>
+        <p class="motif-desc"><span class="es-text">Pérdida de un ser querido, ruptura amorosa, final de un ciclo vital o profesional.</span><span class="fr-text">Perte d'un être cher, rupture amoureuse, fin d'un cycle de vie ou professionnel.</span></p>
       </div>
       <div class="motif-item">
         <span class="motif-icon">🧳</span>
-        <div class="motif-title">Migración & identidad</div>
-        <p class="motif-desc">Vivir entre dos culturas, sensación de no pertenecer, choque cultural, soledad de la expatriación.</p>
+        <div class="motif-title"><span class="es-text">Migración & identidad</span><span class="fr-text">Migration & identité</span></div>
+        <p class="motif-desc"><span class="es-text">Vivir entre dos culturas, sensación de no pertenecer, choque cultural, soledad de la expatriación.</span><span class="fr-text">Vivre entre deux cultures, sentiment de ne pas appartenir, choc culturel, solitude de l'expatriation.</span></p>
       </div>
       <div class="motif-item">
         <span class="motif-icon">🔗</span>
-        <div class="motif-title">Relaciones & pareja</div>
-        <p class="motif-desc">Conflictos repetidos, dificultades de comunicación, dependencia emocional, crisis de pareja.</p>
+        <div class="motif-title"><span class="es-text">Relaciones & pareja</span><span class="fr-text">Relations & couple</span></div>
+        <p class="motif-desc"><span class="es-text">Conflictos repetidos, dificultades de comunicación, dependencia emocional, crisis de pareja.</span><span class="fr-text">Conflits répétés, difficultés de communication, dépendance émotionnelle, crise de couple.</span></p>
       </div>
     </div>
   </section>
@@ -1460,50 +1474,50 @@ footer {
     </svg>
     <div class="premiere-grid">
       <div>
-        <div class="sec-eyebrow reveal" style="color:var(--sauge-lt);">La primera sesión</div>
+        <div class="sec-eyebrow reveal" style="color:var(--sauge-lt);"><span class="es-text">La primera sesión</span><span class="fr-text">La première séance</span></div>
         <div class="premiere-steps reveal">
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <div class="step-title">Presentación & escucha</div>
-              <div class="step-desc">Espacio libre para expresar lo que te trae, sin estructura impuesta ni preguntas directivas.</div>
+              <div class="step-title"><span class="es-text">Presentación & escucha</span><span class="fr-text">Présentation & écoute</span></div>
+              <div class="step-desc"><span class="es-text">Espacio libre para expresar lo que te trae, sin estructura impuesta ni preguntas directivas.</span><span class="fr-text">Espace libre pour exprimer ce qui vous amène, sans structure imposée ni questions directives.</span></div>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <div class="step-title">Evaluación del cuadro</div>
-              <div class="step-desc">Comprensión del contexto, la historia y los elementos que configuran la demanda terapéutica.</div>
+              <div class="step-title"><span class="es-text">Evaluación del cuadro</span><span class="fr-text">Évaluation du tableau</span></div>
+              <div class="step-desc"><span class="es-text">Comprensión del contexto, la historia y los elementos que configuran la demanda terapéutica.</span><span class="fr-text">Compréhension du contexte, de l'histoire et des éléments qui configurent la demande thérapeutique.</span></div>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <div class="step-title">Presentación del marco</div>
-              <div class="step-desc">Claridad sobre la confidencialidad, el ritmo de las sesiones, los objetivos y el modo de trabajo.</div>
+              <div class="step-title"><span class="es-text">Presentación del marco</span><span class="fr-text">Présentation du cadre</span></div>
+              <div class="step-desc"><span class="es-text">Claridad sobre la confidencialidad, el ritmo de las sesiones, los objetivos y el modo de trabajo.</span><span class="fr-text">Clarté sur la confidentialité, le rythme des séances, les objectifs et le mode de travail.</span></div>
             </div>
           </div>
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-body">
-              <div class="step-title">Alianza terapéutica</div>
-              <div class="step-desc">El trabajo empieza cuando hay acuerdo mutuo: la primera sesión también sirve para saber si estamos bien alineados.</div>
+              <div class="step-title"><span class="es-text">Alianza terapéutica</span><span class="fr-text">Alliance thérapeutique</span></div>
+              <div class="step-desc"><span class="es-text">El trabajo empieza cuando hay acuerdo mutuo: la primera sesión también sirve para saber si estamos bien alineados.</span><span class="fr-text">Le travail commence lorsqu'il y a accord mutuel : la première séance sert aussi à vérifier que nous sommes bien alignés.</span></div>
             </div>
           </div>
         </div>
         <div class="premiere-note reveal">
-          <p>⏱ Duración de cada sesión: <strong>50 minutos</strong>. Frecuencia recomendada: semanal o quincenal según el proceso.</p>
+          <p><span class="es-text">⏱ Duración de cada sesión: <strong>50 minutos</strong>. Frecuencia recomendada: semanal o quincenal según el proceso.</span><span class="fr-text">⏱ Durée de chaque séance : <strong>50 minutes</strong>. Fréquence recommandée : hebdomadaire ou bimensuelle selon le processus.</span></p>
         </div>
       </div>
 
       <div class="premiere-right">
-        <div class="sec-eyebrow reveal" style="color:var(--sauge-lt);">Modalidades</div>
-        <h2 class="sec-title reveal" style="color:var(--ivoire);">Presencial<br>& <em>en ligne</em></h2>
+        <div class="sec-eyebrow reveal" style="color:var(--sauge-lt);"><span class="es-text">Modalidades</span><span class="fr-text">Modalités</span></div>
+        <h2 class="sec-title reveal" style="color:var(--ivoire);"><span class="es-text"><span class="es-text">Presencial</span><span class="fr-text">Présentiel</span><br>& <em>en línea</em></span><span class="fr-text">Présentiel<br>& <em>en ligne</em></span></h2>
         <p class="premiere-desc reveal">
-          Las consultas se realizan en el consultorio en Ciudad de México o por videollamada segura, con la misma calidad clínica y el mismo marco de confidencialidad — donde estés en México, Francia o cualquier país hispanohablante o francófono.
+          <span class="es-text">Las consultas se realizan en el consultorio en Ciudad de México o por videollamada segura, con la misma calidad clínica y el mismo marco de confidencialidad — donde estés en México, Francia o cualquier país hispanohablante o francófono.</span><span class="fr-text">Les consultations se déroulent au cabinet à Mexico ou par vidéoconférence sécurisée, avec la même qualité clinique et le même cadre de confidentialité — où que vous soyez au Mexique, en France ou dans tout pays hispanophone ou francophone.</span>
         </p>
         <div style="margin-top:2rem;" class="reveal">
-          <a class="btn-primary" href="#contacto" style="display:inline-block;"><span>Reservar una sesión</span></a>
+          <a class="btn-primary" href="#contacto" style="display:inline-block;"><span><span class="es-text">Reservar una sesión</span><span class="fr-text">Réserver une séance</span></span></a>
         </div>
       </div>
     </div>
@@ -1519,73 +1533,73 @@ footer {
     </svg>
     <div class="approche-grid">
       <div class="approche-left">
-        <div class="sec-eyebrow reveal">Approche clinique</div>
-        <h2 class="sec-title reveal">Entre <em>l'intime</em><br>et le social.</h2>
+        <div class="sec-eyebrow reveal"><span class="es-text">Enfoque clínico</span><span class="fr-text">Approche clinique</span></div>
+        <h2 class="sec-title reveal"><span class="es-text">Entre <em>lo íntimo</em><br>y lo social.</span><span class="fr-text">Entre <em>l'intime</em><br>et le social.</span></h2>
         <div class="divider reveal"></div>
         <blockquote class="approche-quote reveal">
           "Ni coaching, ni psychanalyse de salon — une psychologie clinique incarnée, bilingue et culturellement compétente."
         </blockquote>
         <p class="approche-body reveal">
-          Mi práctica se ancla en la psicología clínica contemporánea: evaluación, objetivos, marco, seguimiento. La formación en psicoanálisis enriquece la escucha sin imponerle una etiqueta al proceso.
+          <span class="es-text">Mi práctica se ancla en la psicología clínica contemporánea: evaluación, objetivos, marco, seguimiento. La formación en psicoanálisis enriquece la escucha sin imponerle una etiqueta al proceso.</span><span class="fr-text">Ma pratique s'ancre dans la psychologie clinique contemporaine : évaluation, objectifs, cadre, suivi. La formation en psychanalyse enrichit l'écoute sans imposer d'étiquette au processus.</span>
         </p>
         <p class="approche-body reveal">
-          La sociología no es decoración: comprender el contexto social, los roles de género, las normas culturales y la historia de clase es parte del trabajo clínico. Esa es mi firma.
+          <span class="es-text">La sociología no es decoración: comprender el contexto social, los roles de género, las normas culturales y la historia de clase es parte del trabajo clínico. Esa es mi firma.</span><span class="fr-text">La sociologie n'est pas un ornement : comprendre le contexte social, les rôles de genre, les normes culturelles et l'histoire de classe fait partie du travail clinique. C'est ma signature.</span>
         </p>
         <div class="formation-tags reveal">
           <div class="ftag">
             <div class="ftag-flag">🇫🇷</div>
             <div class="ftag-body">
-              <div class="ftag-title">MSc Psicología Clínica</div>
+              <div class="ftag-title"><span class="es-text">MSc Psicología Clínica</span><span class="fr-text">MSc Psychologie Clinique</span></div>
               <div class="ftag-sub">Université Paris 8 Vincennes–Saint-Denis</div>
             </div>
           </div>
           <div class="ftag">
             <div class="ftag-flag">🇫🇷</div>
             <div class="ftag-body">
-              <div class="ftag-title">MSc Psicoanálisis</div>
-              <div class="ftag-sub">Université Paris 8 Vincennes–Saint-Denis · Formación complementaria</div>
+              <div class="ftag-title"><span class="es-text">MSc Psicoanálisis</span><span class="fr-text">MSc Psychanalyse</span></div>
+              <div class="ftag-sub">Université Paris 8 Vincennes–Saint-Denis · <span class="es-text">Formación complementaria</span><span class="fr-text">Formation complémentaire</span></div>
             </div>
           </div>
           <div class="ftag">
             <div class="ftag-flag">🇲🇽</div>
             <div class="ftag-body">
-              <div class="ftag-title">Lic. Sociología</div>
-              <div class="ftag-sub">Universidad Autónoma Metropolitana · CDMX</div>
+              <div class="ftag-title"><span class="es-text">Lic. Sociología</span><span class="fr-text">Lic. Sociologie</span></div>
+              <div class="ftag-sub"><span class="es-text">Universidad Autónoma Metropolitana · CDMX</span><span class="fr-text">Universidad Autónoma Metropolitana · CDMX</span></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="approche-right">
-        <div class="sec-eyebrow reveal">Valores del espacio</div>
-        <h3 class="sec-title reveal" style="font-size:clamp(1.5rem,2.5vw,2.5rem);">Un marco <em>claro.</em></h3>
+        <div class="sec-eyebrow reveal"><span class="es-text">Valores del espacio</span><span class="fr-text">Valeurs de l'espace</span></div>
+        <h3 class="sec-title reveal" style="font-size:clamp(1.5rem,2.5vw,2.5rem);"><span class="es-text">Un marco <em>claro.</em></span><span class="fr-text">Un cadre <em>clair.</em></span></h3>
         <div class="valeurs reveal">
           <div class="valeur-item">
             <div class="vi-icon">🔒</div>
             <div class="vi-body">
-              <div class="vi-title">Confidencialidad absoluta</div>
-              <div class="vi-desc">Lo que se dice en sesión permanece en el espacio terapéutico. Ética profesional estricta.</div>
+              <div class="vi-title"><span class="es-text">Confidencialidad absoluta</span><span class="fr-text">Confidentialité absolue</span></div>
+              <div class="vi-desc"><span class="es-text">Lo que se dice en sesión permanece en el espacio terapéutico. Ética profesional estricta.</span><span class="fr-text">Ce qui est dit en séance reste dans l'espace thérapeutique. Éthique professionnelle stricte.</span></div>
             </div>
           </div>
           <div class="valeur-item">
             <div class="vi-icon">◯</div>
             <div class="vi-body">
-              <div class="vi-title">Sin juicios, sin etiquetas</div>
-              <div class="vi-desc">Un espacio libre donde cualquier experiencia puede ser dicha, sin diagnóstico precipitado.</div>
+              <div class="vi-title"><span class="es-text">Sin juicios, sin etiquetas</span><span class="fr-text">Sans jugements, sans étiquettes</span></div>
+              <div class="vi-desc"><span class="es-text">Un espacio libre donde cualquier experiencia puede ser dicha, sin diagnóstico precipitado.</span><span class="fr-text">Un espace libre où toute expérience peut être dite, sans diagnostic précipité.</span></div>
             </div>
           </div>
           <div class="valeur-item">
             <div class="vi-icon">⏳</div>
             <div class="vi-body">
-              <div class="vi-title">A tu ritmo</div>
-              <div class="vi-desc">No hay "resultados en X sesiones". El cambio ocurre cuando el proceso lo permite — acompañado, no forzado.</div>
+              <div class="vi-title"><span class="es-text">A tu ritmo</span><span class="fr-text">À ton rythme</span></div>
+              <div class="vi-desc"><span class="es-text">No hay "resultados en X sesiones". El cambio ocurre cuando el proceso lo permite — acompañado, no forzado.</span><span class="fr-text">Il n'y a pas de "résultats en X séances". Le changement arrive quand le processus le permet — accompagné, jamais forcé.</span></div>
             </div>
           </div>
           <div class="valeur-item">
             <div class="vi-icon">📐</div>
             <div class="vi-body">
-              <div class="vi-title">Cadre structuré</div>
-              <div class="vi-desc">Objetivos acordados, revisiones regulares, marco claro. La terapia es un trabajo, no una conversación sin destino.</div>
+              <div class="vi-title"><span class="es-text">Marco estructurado</span><span class="fr-text">Cadre structuré</span></div>
+              <div class="vi-desc"><span class="es-text">Objetivos acordados, revisiones regulares, marco claro. La terapia es un trabajo, no una conversación sin destino.</span><span class="fr-text">Objectifs convenus, révisions régulières, cadre clair. La thérapie est un travail, pas une conversation sans destination.</span></div>
             </div>
           </div>
         </div>
@@ -1597,33 +1611,33 @@ footer {
   <section id="bilingue">
     <div class="bilingue-inner">
       <div class="bil-text">
-        <div class="sec-eyebrow reveal">Bilinguisme</div>
-        <h2 class="sec-title reveal">Français & <em>español.</em></h2>
+        <div class="sec-eyebrow reveal"><span class="es-text">Bilingüismo</span><span class="fr-text">Bilinguisme</span></div>
+        <h2 class="sec-title reveal"><span class="es-text">Español & <em>français.</em></span><span class="fr-text">Français & <em>español.</em></span></h2>
         <div class="divider reveal"></div>
         <p class="bil-body reveal">
-          Hablar en tu propia lengua en terapia no es un detalle — es fundamental. El trabajo clínico en francés o en español permite una escucha que no pierde nada en la traducción.
+          <span class="es-text">Hablar en tu propia lengua en terapia no es un detalle — es fundamental. El trabajo clínico en francés o en español permite una escucha que no pierde nada en la traducción.</span><span class="fr-text">Parler dans sa propre langue en thérapie n'est pas un détail — c'est fondamental. Le travail clinique en français ou en espagnol permet une écoute qui ne perd rien dans la traduction.</span>
         </p>
         <div class="bil-cases reveal">
-          <div class="bil-case">Francophones expatriés au Mexique</div>
-          <div class="bil-case">Mexicain(e)s ayant vécu en France</div>
-          <div class="bil-case">Personnes bilingues ou biculturelles</div>
-          <div class="bil-case">Couples binationaux (FR/MX)</div>
-          <div class="bil-case">Expats cherchant un suivi en langue maternelle</div>
+          <div class="bil-case"><span class="es-text">Francófonos expatriados en México</span><span class="fr-text">Francophones expatriés au Mexique</span></div>
+          <div class="bil-case"><span class="es-text">Mexicanos/as que han vivido en Francia</span><span class="fr-text">Mexicain(e)s ayant vécu en France</span></div>
+          <div class="bil-case"><span class="es-text">Personas bilingües o biculturales</span><span class="fr-text">Personnes bilingues ou biculturelles</span></div>
+          <div class="bil-case"><span class="es-text">Parejas binacionales (FR/MX)</span><span class="fr-text">Couples binationaux (FR/MX)</span></div>
+          <div class="bil-case"><span class="es-text">Expats que buscan seguimiento en lengua materna</span><span class="fr-text">Expats cherchant un suivi en langue maternelle</span></div>
         </div>
       </div>
       <div class="bil-langs reveal">
         <div class="bil-lang">
           <div class="bil-flag">🇲🇽</div>
           <div class="bil-info">
-            <div class="bil-lang-name">Español</div>
-            <div class="bil-lang-role">Lengua materna · Todos los formatos</div>
+            <div class="bil-lang-name"><span class="es-text">Español</span><span class="fr-text">Español</span></div>
+            <div class="bil-lang-role"><span class="es-text">Lengua materna · Todos los formatos</span><span class="fr-text">Langue maternelle · Tous les formats</span></div>
           </div>
         </div>
         <div class="bil-lang">
           <div class="bil-flag">🇫🇷</div>
           <div class="bil-info">
-            <div class="bil-lang-name">Français</div>
-            <div class="bil-lang-role">Formation & pratique clinique · Tous formats</div>
+            <div class="bil-lang-name"><span class="es-text">Francés</span><span class="fr-text">Français</span></div>
+            <div class="bil-lang-role"><span class="es-text">Formación y práctica clínica · Todos los formatos</span><span class="fr-text">Formation & pratique clinique · Tous formats</span></div>
           </div>
         </div>
 
@@ -1638,24 +1652,24 @@ footer {
       <path d="M200 30 C280 60, 370 140, 340 220 C310 300, 200 350, 120 320 C40 290, 20 180, 60 110 C100 40, 160 10, 200 30Z" stroke="#6B2D8B" stroke-width="1.2" fill="none"/>
       <path d="M200 70 C260 90, 330 160, 305 225 C280 290, 190 325, 130 300 C70 275, 55 185, 90 125 C125 65, 165 52, 200 70Z" stroke="#9B6BB5" stroke-width="0.7" fill="none"/>
     </svg>
-    <div class="sec-eyebrow reveal">Trayectoria</div>
-    <h2 class="sec-title reveal">Formada en <em>dos mundos.</em></h2>
+    <div class="sec-eyebrow reveal"><span class="es-text">Trayectoria</span><span class="fr-text">Parcours</span></div>
+    <h2 class="sec-title reveal"><span class="es-text">Formada en <em>dos mundos.</em></span><span class="fr-text">Formée dans <em>deux mondes.</em></span></h2>
     <div class="divider reveal"></div>
 
     <div class="exp-cards reveal">
       <div class="exp-card exp-card-h">
         <div class="exp-card-bg" aria-hidden="true">I</div>
         <span class="ec-icon">🏥</span>
-        <div class="ec-title">Psicóloga clínica — Hospital psiquiátrico, Francia</div>
-        <p class="ec-text">Ejercicio clínico en entorno hospitalario psiquiátrico francés. Evaluación, seguimiento y acompañamiento de pacientes con patologías severas, en equipos pluridisciplinarios.</p>
-        <span class="ec-tag">Experiencia hospitalaria</span>
+        <div class="ec-title"><span class="es-text">Psicóloga clínica — Hospital psiquiátrico, Francia</span><span class="fr-text">Psychologue clinicienne — Hôpital psychiatrique, France</span></div>
+        <p class="ec-text"><span class="es-text">Ejercicio clínico en entorno hospitalario psiquiátrico francés. Evaluación, seguimiento y acompañamiento de pacientes con patologías severas, en equipos pluridisciplinarios.</span><span class="fr-text">Exercice clinique en milieu hospitalier psychiatrique français. Évaluation, suivi et accompagnement de patients avec des pathologies sévères, au sein d'équipes pluridisciplinaires.</span></p>
+        <span class="ec-tag"><span class="es-text">Experiencia hospitalaria</span><span class="fr-text">Expérience hospitalière</span></span>
       </div>
       <div class="exp-card exp-card-j">
         <div class="exp-card-bg" aria-hidden="true">II</div>
         <span class="ec-icon">⚖️</span>
-        <div class="ec-title">Experta psicológica ante los tribunales — Francia</div>
-        <p class="ec-text">Designada perita oficial por la justicia francesa. Evaluaciones, redacción de informes periciales y comparecencias ante la corte. Un reconocimiento excepcional de rigor profesional.</p>
-        <span class="ec-tag">Peritaje judicial</span>
+        <div class="ec-title"><span class="es-text">Experta psicológica ante los tribunales — Francia</span><span class="fr-text">Experte psychologique près les tribunaux — France</span></div>
+        <p class="ec-text"><span class="es-text">Designada perita oficial por la justicia francesa. Evaluaciones, redacción de informes periciales y comparecencias ante la corte. Un reconocimiento excepcional de rigor profesional.</span><span class="fr-text">Désignée experte officielle par la justice française. Évaluations, rédaction de rapports d'expertise et comparutions devant la cour. Une reconnaissance exceptionnelle de rigueur professionnelle.</span></p>
+        <span class="ec-tag"><span class="es-text">Peritaje judicial</span><span class="fr-text">Expertise judiciaire</span></span>
       </div>
     </div>
 
@@ -1663,41 +1677,41 @@ footer {
       <div class="tl-item">
         <div class="tl-date">CDMX</div>
         <div class="tl-body">
-          <div class="tl-title">Licenciatura en Sociología</div>
-          <div class="tl-inst">Universidad Autónoma Metropolitana (UAM)</div>
-          <div class="tl-desc">Base crítica en ciencias sociales: sociología del género, contextos de clase, historia cultural mexicana. Una formación que hace única la lectura clínica del sujeto.</div>
+          <div class="tl-title"><span class="es-text">Licenciatura en Sociología</span><span class="fr-text">Licence en Sociologie</span></div>
+          <div class="tl-inst"><span class="es-text">Universidad Autónoma Metropolitana (UAM)</span><span class="fr-text">Universidad Autónoma Metropolitana (UAM)</span></div>
+          <div class="tl-desc"><span class="es-text">Base crítica en ciencias sociales: sociología del género, contextos de clase, historia cultural mexicana. Una formación que hace única la lectura clínica del sujeto.</span><span class="fr-text">Base critique en sciences sociales : sociologie du genre, contextes de classe, histoire culturelle mexicaine. Une formation qui rend unique la lecture clinique du sujet.</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-date">París</div>
         <div class="tl-body">
-          <div class="tl-title">MSc Psicología Clínica</div>
+          <div class="tl-title"><span class="es-text">MSc Psicología Clínica</span><span class="fr-text">MSc Psychologie Clinique</span></div>
           <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
-          <div class="tl-desc">Formación de alto nivel en evaluación clínica, psicopatología y acompañamiento psicoterapéutico. La universidad de referencia en ciencias humanas y sociales en Francia.</div>
+          <div class="tl-desc"><span class="es-text">Formación de alto nivel en evaluación clínica, psicopatología y acompañamiento psicoterapéutico. La universidad de referencia en ciencias humanas y sociales en Francia.</span><span class="fr-text">Formation de haut niveau en évaluation clinique, psychopathologie et accompagnement psychothérapeutique. L'université de référence en sciences humaines et sociales en France.</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-date">París</div>
         <div class="tl-body">
-          <div class="tl-title">MSc Psicoanálisis</div>
+          <div class="tl-title"><span class="es-text">MSc Psicoanálisis</span><span class="fr-text">MSc Psychanalyse</span></div>
           <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
-          <div class="tl-desc">Formación avanzada en teoría psicoanalítica (Freud, Lacan). Complemento teórico que enriquece la práctica clínica sin definirla.</div>
+          <div class="tl-desc"><span class="es-text">Formación avanzada en teoría psicoanalítica (Freud, Lacan). Complemento teórico que enriquece la práctica clínica sin definirla.</span><span class="fr-text">Formation avancée en théorie psychanalytique (Freud, Lacan). Complément théorique qui enrichit la pratique clinique sans la définir.</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-date">Francia</div>
         <div class="tl-body">
-          <div class="tl-title">Ejercicio clínico hospitalario & pericial</div>
-          <div class="tl-inst">Hospital psiquiátrico · Tribunales franceses</div>
-          <div class="tl-desc">Años de práctica en contextos institucionales exigentes: psiquiatría hospitalaria y peritaje judicial. Una experiencia que pocos profesionales tienen.</div>
+          <div class="tl-title"><span class="es-text">Ejercicio clínico hospitalario & pericial</span><span class="fr-text">Exercice clinique hospitalier & d'expertise</span></div>
+          <div class="tl-inst"><span class="es-text">Hospital psiquiátrico · Tribunales franceses</span><span class="fr-text">Hôpital psychiatrique · Tribunaux français</span></div>
+          <div class="tl-desc"><span class="es-text">Años de práctica en contextos institucionales exigentes: psiquiatría hospitalaria y peritaje judicial. Una experiencia que pocos profesionales tienen.</span><span class="fr-text">Années de pratique dans des contextes institutionnels exigeants : psychiatrie hospitalière et expertise judiciaire. Une expérience que peu de professionnels possèdent.</span></div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-date">Hoy</div>
         <div class="tl-body">
-          <div class="tl-title">Consulta privada — Ciudad de México</div>
-          <div class="tl-inst">CDMX · Presencial &amp; Online · ES · FR</div>
-          <div class="tl-desc">De regreso en su ciudad, ofrece acompañamiento psicológico clínico de calidad europea, con sensibilidad mexicana y mirada intercultural.</div>
+          <div class="tl-title"><span class="es-text">Consulta privada — Ciudad de México</span><span class="fr-text">Cabinet privé — Ciudad de México</span></div>
+          <div class="tl-inst"><span class="es-text">CDMX · Presencial & Online · ES · FR</span><span class="fr-text">CDMX · Présentiel & En ligne · ES · FR</span></div>
+          <div class="tl-desc"><span class="es-text">De regreso en su ciudad, ofrece acompañamiento psicológico clínico de calidad europea, con sensibilidad mexicana y mirada intercultural.</span><span class="fr-text">De retour dans sa ville, elle offre un accompagnement psychologique clinique de qualité européenne, avec une sensibilité mexicaine et un regard interculturel.</span></div>
         </div>
       </div>
     </div>
@@ -1707,58 +1721,65 @@ footer {
   <section class="section" id="servicios">
     <div class="svc-intro-grid">
       <div>
-        <div class="sec-eyebrow reveal">Servicios</div>
-        <h2 class="sec-title reveal">Espacios de <em>escucha.</em></h2>
+        <div class="sec-eyebrow reveal"><span class="es-text">Servicios</span><span class="fr-text">Services</span></div>
+        <h2 class="sec-title reveal"><span class="es-text">Espacios de <em>escucha.</em></span><span class="fr-text">Espaces <em>d'écoute.</em></span></h2>
       </div>
       <p class="svc-intro-text reveal">
-        Cada consulta es un espacio seguro, confidencial y sin juicios. La terapia no promete soluciones rápidas — ofrece un marco para comprender y transformar.
+        <span class="es-text">Cada consulta es un espacio seguro, confidencial y sin juicios. La terapia no promete soluciones rápidas — ofrece un marco para comprender y transformar.</span><span class="fr-text">Chaque consultation est un espace sûr, confidentiel et sans jugement. La thérapie ne promet pas de solutions rapides — elle offre un cadre pour comprendre et transformer.</span>
       </p>
     </div>
 
     <div class="svc-list reveal">
       <div class="svc-item">
         <div>
-          <div class="svc-item-name">Terapia individual</div>
-          <div class="svc-item-desc">Para adultos y jóvenes adultos. Proceso de autoconocimiento, elaboración de conflictos psíquicos y cambio de patrones. 50 min · frecuencia a acordar.</div>
+          <div class="svc-item-name"><span class="es-text">Terapia individual</span><span class="fr-text">Thérapie individuelle</span></div>
+          <div class="svc-item-desc"><span class="es-text">Para adultos y jóvenes adultos. Proceso de autoconocimiento, elaboración de conflictos psíquicos y cambio de patrones. 50 min · frecuencia a acordar.</span><span class="fr-text">Pour adultes et jeunes adultes. Processus de connaissance de soi, élaboration de conflits psychiques et changement de schémas. 50 min · fréquence à convenir.</span></div>
         </div>
         <div class="svc-arrow">→</div>
       </div>
       <div class="svc-item">
         <div>
-          <div class="svc-item-name">Ansiedad, depresión & burnout</div>
-          <div class="svc-item-desc">Acompañamiento clínico especializado de trastornos del estado de ánimo. Experiencia hospitalaria que permite trabajar situaciones de mayor complejidad.</div>
+          <div class="svc-item-name"><span class="es-text">Ansiedad, depresión & burnout</span><span class="fr-text">Anxiété, dépression & burnout</span></div>
+          <div class="svc-item-desc"><span class="es-text">Acompañamiento clínico especializado de trastornos del estado de ánimo. Experiencia hospitalaria que permite trabajar situaciones de mayor complejidad.</span><span class="fr-text">Accompagnement clinique spécialisé des troubles de l'humeur. Expérience hospitalière permettant de travailler des situations de plus grande complexité.</span></div>
         </div>
         <div class="svc-arrow">→</div>
       </div>
       <div class="svc-item">
         <div>
-          <div class="svc-item-name">Terapia de pareja</div>
-          <div class="svc-item-desc">Crisis, comunicación, ruptura o el deseo de crecer juntos. Un espacio para los dos, con un tercer lugar neutro.</div>
+          <div class="svc-item-name"><span class="es-text">Terapia de pareja</span><span class="fr-text">Thérapie de couple</span></div>
+          <div class="svc-item-desc"><span class="es-text">Crisis, comunicación, ruptura o el deseo de crecer juntos. Un espacio para los dos, con un tercer lugar neutro.</span><span class="fr-text">Crise, communication, rupture ou désir de grandir ensemble. Un espace pour les deux, avec un tiers neutre.</span></div>
         </div>
         <div class="svc-arrow">→</div>
       </div>
       <div class="svc-item">
         <div>
-          <div class="svc-item-name">Sesiones en línea</div>
-          <div class="svc-item-desc">La misma calidad clínica, desde donde estés. México, Francia, cualquier país hispano o francófono. Español · Français.</div>
+          <div class="svc-item-name"><span class="es-text">Sesiones en línea</span><span class="fr-text">Séances en ligne</span></div>
+          <div class="svc-item-desc"><span class="es-text">La misma calidad clínica, desde donde estés. México, Francia, cualquier país hispano o francófono. Español · Français.</span><span class="fr-text">La même qualité clinique, depuis n'importe où. Mexique, France, tout pays hispanophone ou francophone. Español · Français.</span></div>
         </div>
         <div class="svc-arrow">→</div>
       </div>
       <div class="svc-item">
         <div>
-          <div class="svc-item-name">Peritaje psicológico</div>
-          <div class="svc-item-desc">Evaluaciones e informes periciales a petición. Experiencia como experta oficial ante los tribunales franceses.</div>
+          <div class="svc-item-name"><span class="es-text">Peritaje psicológico</span><span class="fr-text">Expertise psychologique</span></div>
+          <div class="svc-item-desc"><span class="es-text">Evaluaciones e informes periciales a petición. Experiencia como experta oficial ante los tribunales franceses.</span><span class="fr-text">Évaluations et rapports d'expertise sur demande. Expérience en tant qu'experte officielle près les tribunaux français.</span></div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="svc-item">
+        <div>
+          <div class="svc-item-name"><span class="es-text">Psicología en el trabajo — Empresas</span><span class="fr-text">Psychologie au travail — Entreprises</span></div>
+          <div class="svc-item-desc"><span class="es-text">Sesiones individuales y talleres grupales de bienestar laboral. Acompañamiento para el cumplimiento de la <strong>NOM-035-STPS-2018</strong> — la norma mexicana que obliga a las empresas a identificar y prevenir riesgos psicosociales. Experiencia con empresas en México.</span><span class="fr-text">Séances individuelles et ateliers collectifs de bien-être au travail. Accompagnement pour la conformité à la <strong>NOM-035-STPS-2018</strong> — la norme mexicaine qui oblige les entreprises à identifier et prévenir les risques psychosociaux. Expérience avec des entreprises au Mexique.</span></div>
         </div>
         <div class="svc-arrow">→</div>
       </div>
     </div>
 
     <div class="svc-tags reveal">
-      <span class="tag tag-solid">Adultos</span>
-      <span class="tag tag-solid">Jóvenes adultos</span>
-      <span class="tag tag-terra">Pareja</span>
+      <span class="tag tag-solid"><span class="es-text">Adultos</span><span class="fr-text">Adultes</span></span>
+      <span class="tag tag-solid"><span class="es-text">Jóvenes adultos</span><span class="fr-text">Jeunes adultes</span></span>
+      <span class="tag tag-terra"><span class="es-text">Pareja</span><span class="fr-text">Couple</span></span>
       <span class="tag tag-sauge">Español · Français</span>
-      <span class="tag tag-outline">Presencial CDMX</span>
+      <span class="tag tag-outline"><span class="es-text">Presencial CDMX</span><span class="fr-text">Présentiel CDMX</span></span>
       <span class="tag tag-outline">Online</span>
     </div>
   </section>
@@ -1767,19 +1788,19 @@ footer {
   <!-- ════ AGENDA ════ -->
   <section class="section" id="agenda">
     <div style="max-width:760px; margin:0 auto; text-align:center;">
-      <div class="sec-eyebrow" style="justify-content:center;"><span>────</span> Agenda </div>
-      <h2 class="sec-title">Reserva tu <em>consulta</em></h2>
-      <p style="font-size:1.05rem; color:var(--text-body); line-height:1.82; margin-bottom:3rem;">Selecciona el horario que mejor se adapte a ti. Recibirás una confirmación por correo electrónico con todos los detalles de tu cita.</p>
+      <div class="sec-eyebrow" style="justify-content:center;"><span>────</span> <span class="es-text">Agenda</span><span class="fr-text">Agenda</span> </div>
+      <h2 class="sec-title"><span class="es-text">Reserva tu <em>consulta</em></span><span class="fr-text">Prends <em>rendez-vous</em></span></h2>
+      <p style="font-size:1.05rem; color:var(--text-body); line-height:1.82; margin-bottom:3rem;"><span class="es-text">Selecciona el horario que mejor se adapte a ti. Recibirás una confirmación por correo electrónico con todos los detalles de tu cita.</span><span class="fr-text">Choisis le créneau qui te convient le mieux. Tu recevras une confirmation par e-mail avec tous les détails de ton rendez-vous.</span></p>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2.5rem; max-width:620px; margin-left:auto; margin-right:auto;">
         <div style="background:white; border-radius:4px; padding:2.5rem 1.5rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--terra);">
           <div style="font-size:2.2rem; margin-bottom:1rem;">📍</div>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--petrole); margin-bottom:.5rem;">Presencial</h3>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--petrole); margin-bottom:.5rem;"><span class="es-text">Presencial</span><span class="fr-text">Présentiel</span></h3>
           <p style="color:#888; font-size:.88rem; margin-bottom:.5rem;">Consultorio · CDMX</p>
           <p style="color:var(--terra); font-weight:600; font-size:.9rem;">Mar · Jue · Sáb<br>9h00 – 20h00</p>
         </div>
         <div style="background:white; border-radius:4px; padding:2.5rem 1.5rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--sauge);">
           <div style="font-size:2.2rem; margin-bottom:1rem;">💻</div>
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--petrole); margin-bottom:.5rem;">En Línea</h3>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--petrole); margin-bottom:.5rem;"><span class="es-text">En Línea</span><span class="fr-text">En Ligne</span></h3>
           <p style="color:#888; font-size:.88rem; margin-bottom:.5rem;">Google Meet</p>
           <p style="color:var(--sauge); font-weight:600; font-size:.9rem;">Mar · Jue · Sáb<br>9h00 – 20h00</p>
         </div>
@@ -1787,87 +1808,78 @@ footer {
       <a href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener"
          style="display:inline-block; background:var(--terra); color:white; font-family:'Source Sans 3',sans-serif; font-size:1rem; font-weight:600; padding:1.1rem 2.8rem; border-radius:2px; text-decoration:none; letter-spacing:.04em; margin-bottom:.8rem;"
          onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        Reservar consulta →
+        <span class="es-text">Reservar consulta →</span><span class="fr-text">Prendre rendez-vous →</span>
       </a>
-      <p style="font-size:.85rem; color:#aaa; margin-top:.8rem;">Selecciona tu modalidad al reservar · Confirmación inmediata por email</p>
+      <p style="font-size:.85rem; color:#aaa; margin-top:.8rem;"><span class="es-text">Selecciona tu modalidad al reservar · Confirmación inmediata por email</span><span class="fr-text">Choisis ta modalité lors de la réservation · Confirmation immédiate par email</span></p>
       <div style="margin-top:2rem; padding:1rem 1.4rem; background:rgba(155,107,181,.08); border-left:2px solid var(--sauge); font-size:.9rem; color:var(--text-body); line-height:1.65; text-align:left; max-width:620px; margin-left:auto; margin-right:auto;">
-        🔒 Tus datos personales son confidenciales y están protegidos conforme a la Ley Federal de Protección de Datos Personales (LFPDPPP). Solo serán utilizados para gestionar tu cita.
+        <span class="es-text">🔒 Tus datos personales son confidenciales y están protegidos conforme a la Ley Federal de Protección de Datos Personales (LFPDPPP). Solo serán utilizados para gestionar tu cita.</span><span class="fr-text">🔒 Vos données personnelles sont confidentielles et protégées conformément à la Loi fédérale de protection des données personnelles (LFPDPPP). Elles ne seront utilisées que pour gérer votre rendez-vous.</span>
       </div>
     </div>
   </section>
 
   <!-- ════ TARIFS ════ -->
-  <section class="section" id="tarifs">
-    <div class="sec-eyebrow reveal">Tarifs & modalités</div>
-    <h2 class="sec-title reveal">Información <em>práctica.</em></h2>
-    <div class="divider reveal"></div>
-
-    <div class="tarifs-grid reveal">
-      <div class="tarif-card">
-        <div class="tarif-type">Consulta presencial</div>
-        <div class="tarif-name">Sesión individual — Cabinet CDMX</div>
-        <div class="tarif-price">MXN $XXX</div>
-        <div class="tarif-unit">por sesión de 50 minutos</div>
-        <div class="tarif-details">
-          <div class="tarif-detail">Duración: 50 minutos</div>
-          <div class="tarif-detail">Consultorio en CDMX (colonia a confirmar)</div>
-          <div class="tarif-detail">Factura / reçu disponible</div>
-          <div class="tarif-detail">Cancelación con 24h de anticipación</div>
-        </div>
-      </div>
-      <div class="tarif-card">
-        <div class="tarif-type">Sesión en línea</div>
-        <div class="tarif-name">Videollamada segura — Online</div>
-        <div class="tarif-price">MXN $XXX</div>
-        <div class="tarif-unit">por sesión de 50 minutos</div>
-        <div class="tarif-details">
-          <div class="tarif-detail">Duración: 50 minutos</div>
-          <div class="tarif-detail">Disponible en todo el mundo</div>
-          <div class="tarif-detail">Español · Français</div>
-          <div class="tarif-detail">Confirmación por correo electrónico</div>
-        </div>
-      </div>
-      <div class="tarifs-note">
-        💳 <strong>Medios de pago:</strong> Transferencia bancaria, tarjeta, efectivo (a confirmar). &nbsp;|&nbsp; 📋 <strong>Facturación:</strong> Reçu disponible a petición. &nbsp;|&nbsp; ℹ️ Este sitio no ofrece servicio de urgencias. En caso de crisis, contacta el <strong>911</strong> o la <strong>Línea de la Vida 800 911 2000</strong>.
-      </div>
+  <section id="tarifs" style="padding:2rem 3rem 2rem; max-width:860px; margin:0 auto;">
+    <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:baseline; font-family:'Source Sans 3',sans-serif; font-size:.9rem; color:var(--text-mid); border-top:1px solid var(--brume); padding-top:1.5rem;">
+      <span data-es data-fr style="font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sauge); font-weight:600;">
+        <span class="es-text">Honorarios</span>
+        <span class="fr-text">Honoraires</span>
+      </span>
+      <span>
+        <span class="es-text">Presencial · CDMX</span>
+        <span class="fr-text">Présentiel · CDMX</span>
+        — <strong style="color:var(--petrole);">MXN $XXX</strong> / 50 min
+      </span>
+      <span>
+        <span class="es-text">En línea</span>
+        <span class="fr-text">En ligne</span>
+        — <strong style="color:var(--petrole);">MXN $XXX</strong> / 50 min
+      </span>
+      <span style="color:var(--text-light); font-style:italic; font-size:.85rem;">
+        <span class="es-text">Transferencia · Tarjeta · Factura disponible</span>
+        <span class="fr-text">Virement · Carte · Reçu disponible</span>
+      </span>
+      <span style="color:var(--text-light); font-style:italic; font-size:.85rem;">
+        <span class="es-text">Cada situación es única — conversémoslo.</span>
+        <span class="fr-text">Chaque situation est unique — parlons-en.</span>
+      </span>
     </div>
   </section>
 
   <!-- ════ ARTICLES ════ -->
   <section class="section" id="articles">
-    <div class="sec-eyebrow reveal">Journal clinique</div>
-    <h2 class="sec-title reveal">Artículos & <em>réflexions.</em></h2>
+    <div class="sec-eyebrow reveal"><span class="es-text">Artículos clínicos</span><span class="fr-text">Journal clinique</span></div>
+    <h2 class="sec-title reveal"><span class="es-text">Artículos & <em>reflexiones.</em></span><span class="fr-text">Articles & <em>réflexions.</em></span></h2>
     <div class="divider reveal"></div>
     <p class="reveal" style="font-size:.83rem;color:var(--text-mid);max-width:520px;line-height:1.8;margin-bottom:2rem;">
-      Contenidos de psicoeducación clínica — sin diagnósticos por internet, sin promesas. Solo herramientas y reflexiones útiles.
+      <span class="es-text">Contenidos de psicoeducación clínica — sin diagnósticos por internet, sin promesas. Solo herramientas y reflexiones útiles.</span><span class="fr-text">Contenus de psychoéducation clinique — sans diagnostics par internet, sans promesses. Seulement des outils et des réflexions utiles.</span>
     </p>
 
     <div class="articles-grid reveal">
       <article class="article-card">
-        <span class="ac-cat cat-1">Ansiedad & cuerpo</span>
-        <h3 class="ac-title">¿Por qué la ansiedad no "se cura" sola?</h3>
-        <p class="ac-excerpt">La ansiedad crónica no es debilidad — es una respuesta aprendida que el sistema nervioso puede reaprender. Una mirada clínica sin sensacionalismo.</p>
+        <span class="ac-cat cat-1"><span class="es-text">Ansiedad & cuerpo</span><span class="fr-text">Anxiété & corps</span></span>
+        <h3 class="ac-title"><span class="es-text">¿Por qué la ansiedad no "se cura" sola?</span><span class="fr-text">Pourquoi l'anxiété ne "guérit" pas seule ?</span></h3>
+        <p class="ac-excerpt"><span class="es-text">La ansiedad crónica no es debilidad — es una respuesta aprendida que el sistema nervioso puede reaprender. Una mirada clínica sin sensacionalismo.</span><span class="fr-text">L'anxiété chronique n'est pas une faiblesse — c'est une réponse apprise que le système nerveux peut désapprendre. Un regard clinique sans sensationnalisme.</span></p>
         <div class="ac-foot">
-          <span>8 min de lectura</span>
-          <a href="#">Leer →</a>
+          <span><span class="es-text">8 min de lectura</span><span class="fr-text">8 min de lecture</span></span>
+          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
       <article class="article-card">
         <span class="ac-cat cat-2">Vivre entre deux cultures</span>
-        <h3 class="ac-title">Quand changer de pays change aussi qui l'on est</h3>
-        <p class="ac-excerpt">La migration ne déplace pas seulement un corps — elle recompose une identité. Ce que la clinique peut entendre de cette expérience.</p>
+        <h3 class="ac-title"><span class="es-text">Cuando cambiar de país cambia también quién uno es</span><span class="fr-text">Quand changer de pays change aussi qui l'on est</span></h3>
+        <p class="ac-excerpt"><span class="es-text">La migración no solo desplaza un cuerpo — recompone una identidad. Lo que la clínica puede escuchar de esa experiencia.</span><span class="fr-text">La migration ne déplace pas seulement un corps — elle recompose une identité. Ce que la clinique peut entendre de cette expérience.</span></p>
         <div class="ac-foot">
-          <span>6 min de lecture</span>
-          <a href="#">Lire →</a>
+          <span><span class="es-text">6 min de lectura</span><span class="fr-text">6 min de lecture</span></span>
+          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
       <article class="article-card">
-        <span class="ac-cat cat-3">Clinique & société</span>
-        <h3 class="ac-title">Género, normas y malestar psíquico: lo que la clínica no puede ignorar</h3>
-        <p class="ac-excerpt">Por qué la psicología sin perspectiva social reproduce lo que debería cuestionar — y cómo un enfoque crítico cambia la práctica.</p>
+        <span class="ac-cat cat-3"><span class="es-text">Clínica & sociedad</span><span class="fr-text">Clinique & société</span></span>
+        <h3 class="ac-title"><span class="es-text">Género, normas y malestar psíquico: lo que la clínica no puede ignorar</span><span class="fr-text">Genre, normes et malaise psychique : ce que la clinique ne peut ignorer</span></h3>
+        <p class="ac-excerpt"><span class="es-text">Por qué la psicología sin perspectiva social reproduce lo que debería cuestionar — y cómo un enfoque crítico cambia la práctica.</span><span class="fr-text">Pourquoi la psychologie sans perspective sociale reproduit ce qu'elle devrait questionner — et comment une approche critique change la pratique.</span></p>
         <div class="ac-foot">
-          <span>10 min de lectura</span>
-          <a href="#">Leer →</a>
+          <span><span class="es-text">10 min de lectura</span><span class="fr-text">10 min de lecture</span></span>
+          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
     </div>
@@ -1903,91 +1915,111 @@ footer {
       <circle cx="140" cy="180" r="3" fill="#9B6BB5"/>
       <circle cx="180" cy="180" r="3" fill="#6B2D8B"/>
     </svg>
-    <div class="sec-eyebrow reveal">Contacto</div>
-    <h2 class="sec-title reveal">El primer paso<br>es <em>escribir.</em></h2>
+    <div class="sec-eyebrow reveal"><span class="es-text">Contacto</span><span class="fr-text">Contact</span></div>
+    <h2 class="sec-title reveal"><span class="es-text">El primer paso<br>es <em>escribir.</em></span><span class="fr-text">Le premier pas<br>c'est <em>écrire.</em></span></h2>
     <div class="divider reveal"></div>
 
     <div class="contact-grid">
       <div class="reveal">
-        <p class="ct-sub">Cada proceso terapéutico empieza con un primer contacto. Escríbeme para coordinar una primera sesión de evaluación sin compromiso.</p>
+        <p class="ct-sub"><span class="es-text">Cada proceso terapéutico empieza con un primer contacto. Escríbeme para coordinar una primera sesión de evaluación sin compromiso.</span><span class="fr-text">Tout processus thérapeutique commence par un premier contact. Écrivez-moi pour coordonner une première séance d'évaluation sans engagement.</span></p>
 
         <div class="privacy-note">
-          🔒 <strong>Nota de privacidad:</strong> No incluyas información clínica sensible en este formulario. Toda la información recibida es confidencial y tratada conforme a la <a href="#" style="color:var(--terra);">LFPDPPP</a>.
+          <span class="es-text">🔒 <strong>Nota de privacidad:</strong> No incluyas información clínica sensible en este formulario. Toda la información recibida es confidencial y tratada conforme a la <a href="#" style="color:var(--terra);">LFPDPPP</a>.</span><span class="fr-text">🔒 <strong>Note de confidentialité :</strong> N'incluez pas d'informations cliniques sensibles dans ce formulaire. Toutes les informations reçues sont confidentielles et traitées conformément à la <a href="#" style="color:var(--terra);">LFPDPPP</a>.</span>
         </div>
 
         <form class="form" action="https://api.web3forms.com/submit" method="POST" method="POST">
           <div class="form-2">
             <div class="fg">
-              <label class="flbl" for="nombre">Nombre</label>
-              <input class="finp" type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name">
+              <label class="flbl" for="nombre"><span class="es-text">Nombre</span><span class="fr-text">Prénom</span></label>
+              <input class="finp" type="text" id="nombre" name="nombre" placeholder="Tu nombre" data-ph-es="Tu nombre" data-ph-fr="Votre prénom" autocomplete="given-name">
             </div>
             <div class="fg">
-              <label class="flbl" for="email">Correo electrónico</label>
+              <label class="flbl" for="email"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></label>
               <input class="finp" type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email">
             </div>
           </div>
           <div class="fg">
-            <label class="flbl" for="tipo">Tipo de consulta</label>
+            <label class="flbl" for="tipo"><span class="es-text">Tipo de consulta</span><span class="fr-text">Type de consultation</span></label>
             <select class="fsel" id="tipo" name="tipo">
               <option value="">— Selecciona —</option>
-              <option>Terapia individual</option>
-              <option>Ansiedad / Depresión / Burnout</option>
-              <option>Terapia de pareja</option>
-              <option>Sesión en línea</option>
-              <option>Peritaje psicológico</option>
-              <option>Primera consulta / información general</option>
+              <option value="individual">Terapia individual</option>
+              <option value="ansiedad">Ansiedad / Depresión / Burnout</option>
+              <option value="pareja">Terapia de pareja</option>
+              <option value="online">Sesión en línea</option>
+              <option value="peritos">Peritaje psicológico</option>
+              <option value="empresas">Psicología en empresas (NOM-035)</option>
+              <option value="otro">Primera consulta / información general</option>
             </select>
           </div>
           <div class="fg">
-            <label class="flbl" for="msg">Mensaje breve <span style="font-weight:300;text-transform:none;font-size:.9em;">(opcional)</span></label>
-            <input class="finp" type="text" id="msg" name="message" placeholder="¿Qué te trae aquí? (sin datos sensibles)">
+            <label class="flbl" for="msg"><span class="es-text">Mensaje breve</span><span class="fr-text">Message bref</span> <span style="font-weight:300;text-transform:none;font-size:.9em;">(<span class="es-text">opcional</span><span class="fr-text">optionnel</span>)</span></label>
+            <input class="finp" type="text" id="msg" name="message" placeholder="¿Qué te trae aquí? (sin datos sensibles)" data-ph-es="¿Qué te trae aquí? (sin datos sensibles)" data-ph-fr="Qu'est-ce qui vous amène ? (sans données sensibles)">
           </div>
           <label class="fchk">
             <input type="checkbox" required>
-            He leído el <a href="#" style="color:var(--terra);">aviso de privacidad</a> y acepto el tratamiento de mis datos personales.
+            <span class="es-text">He leído el</span><span class="fr-text">J'ai lu la</span> <a href="#" style="color:var(--terra);"><span class="es-text">aviso de privacidad</span><span class="fr-text">politique de confidentialité</span></a> <span class="es-text">y acepto el tratamiento de mis datos personales.</span><span class="fr-text">et j'accepte le traitement de mes données personnelles.</span>
           </label>
           <input type="hidden" name="access_key" value="225b48df-6d81-4333-a927-2019332b4f16">
           <input type="hidden" name="subject" value="Nueva consulta desde monterrubiopsicologa.com">
           <input type="hidden" name="redirect" value="https://monterrubiopsicologa.com/#contacto">
-          <button class="fbtn" type="submit"><span>Enviar mensaje →</span></button>
+          <button class="fbtn" type="submit"><span><span class="es-text">Enviar mensaje →</span><span class="fr-text">Envoyer le message →</span></span></button>
         </form>
       </div>
 
       <div class="ct-right reveal">
         <div class="ct-item">
-          <div class="ct-label">Ubicación</div>
-          <div class="ct-value">Ciudad de México</div>
-          <div class="ct-sub2">Colonia y dirección exacta a confirmar por correo</div>
+          <div class="ct-label"><span class="es-text">Ubicación</span><span class="fr-text">Adresse</span></div>
+          <div class="ct-value">Rtno. 29 Fray Servando Teresa de Mier 51<br>Jardín Balbuena, Venustiano Carranza<br>15900 · Ciudad de México, CDMX</div>
+          <a href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:.5rem;font-size:.85rem;color:var(--terra);text-decoration:none;font-family:'Source Sans 3',sans-serif;">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;flex-shrink:0;"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+            <span class="es-text">Ver en Google Maps →</span><span class="fr-text">Voir sur Google Maps →</span>
+          </a>
         </div>
         <div class="ct-item">
-          <div class="ct-label">Correo electrónico</div>
+          <div class="ct-label"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></div>
           <div class="ct-value"><a href="/cdn-cgi/l/email-protection#97f4f6e5f8fbfef9f6d7faf8f9e3f2e5e5e2f5fef8e7e4fef4f8fbf8f0f6b9f4f8fa" style="color:var(--petrole);text-decoration:none;"><span class="__cf_email__" data-cfemail="e7848695888b8e8986a78a88899382959592858e8897948e84888b888086c984888a">[email&#160;protected]</span></a></div>
-          <div class="ct-sub2">Respuesta en menos de 24 h</div>
+          <div class="ct-sub2"><span class="es-text">Respuesta en menos de 24 h</span><span class="fr-text">Réponse en moins de 24 h</span></div>
         </div>
         <div class="ct-item">
-          <div class="ct-label">Horarios</div>
-          <div class="ct-value">Mar · Jue · Sáb · 9:00–20:00</div>
-          <div class="ct-sub2">Horario CDMX (GMT–6)</div>
+          <div class="ct-label"><span class="es-text">Horarios</span><span class="fr-text">Horaires</span></div>
+          <div class="ct-value"><span class="es-text">Mar · Jue · Sáb · 9:00–20:00</span><span class="fr-text">Mar · Jeu · Sam · 9h00–20h00</span></div>
+          <div class="ct-sub2"><span class="es-text">Horario CDMX (GMT–6)</span><span class="fr-text">Heure CDMX (GMT–6)</span></div>
         </div>
         <div class="ct-item">
-          <div class="ct-label">Idiomas</div>
+          <div class="ct-label"><span class="es-text">Idiomas</span><span class="fr-text">Langues</span></div>
           <div class="ct-value">Español · Français</div>
         </div>
 
         <div class="ct-cedula">
-          <div class="ct-cedula-title">Información profesional</div>
+          <div class="ct-cedula-title"><span class="es-text">Información profesional</span><span class="fr-text">Informations professionnelles</span></div>
           <p class="ct-cedula-text">
-            <strong>Eunice Carolina Monterrubio Roché</strong> · Psicóloga Clínica<br>
-            Cédula profesional: [número a completar]<br>
-            <a href="https://cedulaprofesional.sep.gob.mx" target="_blank" rel="noopener noreferrer">Verificar cédula en el registro oficial SEP →</a>
+            <strong>Eunice Carolina Monterrubio Roché</strong> · <span class="es-text">Psicóloga Clínica</span><span class="fr-text">Psychologue Clinicienne</span><br>
+            <span class="es-text">Cédula profesional: [número a completar]</span><span class="fr-text">N° de cédule professionnelle : [à compléter]</span><br>
+            <a href="https://cedulaprofesional.sep.gob.mx" target="_blank" rel="noopener noreferrer"><span class="es-text">Verificar cédula en el registro oficial SEP →</span><span class="fr-text">Vérifier la cédule sur le registre officiel SEP →</span></a>
           </p>
         </div>
 
         <div class="ct-social">
-          <a class="ct-soc" href="https://www.instagram.com/monterrubiopsicologa" target="_blank" rel="noopener">📸 Instagram</a>
-          <a class="ct-soc" href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener">📍 Google Maps</a>
-          <a class="ct-soc" href="https://wa.me/525538773998?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20la%20Mtra.%20Carolina%20Monterrubio." target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="ct-soc" href="https://www.linkedin.com/in/carolina-monterrubio-2bba9420b/" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a class="ct-soc" href="https://www.instagram.com/monterrubiopsicologa" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#6B2D8B"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a class="ct-soc" href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener" aria-label="Google Maps">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#6B2D8B"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+            Google Maps
+          </a>
+          <a class="ct-soc" href="https://wa.me/525538773998?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20la%20Mtra.%20Carolina%20Monterrubio." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#6B2D8B"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+          <a class="ct-soc" href="https://www.linkedin.com/in/carolina-monterrubio-2bba9420b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#6B2D8B"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="ct-soc" href="#contacto" style="background:var(--terra);color:white;border-color:var(--terra);" aria-label="Contacto">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Escribir
+          </a>
         </div>
       </div>
     </div>
@@ -2005,11 +2037,11 @@ footer {
             <svg viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
           </div>
           <div class="maps-address">
-            <strong>Consultorio · Ciudad de México</strong>
+            <strong><span class="es-text">Mtra. Carolina Monterrubio Psicóloga Clínica</span><span class="fr-text">Mtra. Carolina Monterrubio Psychologue Clinicienne</span></strong>
             Rtno. 29 Fray Servando Teresa de Mier 51, Jardín Balbuena<br>Venustiano Carranza, 15900 · Ciudad de México, CDMX
           </div>
         </div>
-        <a class="maps-link" href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener">Ver en Google Maps</a>
+        <a class="maps-link" href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener"><span class="es-text">Ver en Google Maps</span><span class="fr-text">Voir sur Google Maps</span></a>
       </div>
     </div>
   </section>
@@ -2019,22 +2051,22 @@ footer {
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">Eunice Carolina Monterrubio Roché</div>
-        <div class="footer-brand-role">Psicóloga Clínica · CDMX</div>
+        <div class="footer-brand-role"><span class="es-text">Psicóloga Clínica · CDMX</span><span class="fr-text">Psychologue Clinicienne · CDMX</span></div>
         <p class="footer-brand-p">Un espace clinique, bilingue et éthique — au croisement de Mexico et Paris.</p>
         <div class="footer-urgency">
-          🆘 Este sitio no sustituye la atención de emergencias. En crisis: <strong>911</strong> · <a href="tel:8009112000">Línea de la Vida 800 911 2000</a> · <a href="tel:5552598121">SAPTEL (55) 5259 8121</a>
+          <span class="es-text">🆘 Este sitio no sustituye la atención de emergencias. En crisis: <strong>911</strong> · <a href="tel:8009112000">Línea de la Vida 800 911 2000</a> · <a href="tel:5552598121">SAPTEL (55) 5259 8121</a></span><span class="fr-text">🆘 Ce site ne remplace pas les services d'urgence. En crise : <strong>911</strong> · <a href="tel:8009112000">Línea de la Vida 800 911 2000</a> · <a href="tel:5552598121">SAPTEL (55) 5259 8121</a></span>
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Navegación</div>
+        <div class="footer-col-title"><span class="es-text">Navegación</span><span class="fr-text">Navigation</span></div>
         <div class="footer-links">
-          <a class="footer-link" href="#hero">Inicio</a>
-          <a class="footer-link" href="#pourquoi">Consultas</a>
-          <a class="footer-link" href="#approche">Approche</a>
-          <a class="footer-link" href="#trayectoria">Trayectoria</a>
-          <a class="footer-link" href="#tarifs">Tarifs</a>
-          <a class="footer-link" href="#articles">Journal</a>
-          <a class="footer-link" href="#contacto">Contacto</a>
+          <a class="footer-link" href="#hero"><span class="es-text">Inicio</span><span class="fr-text">Accueil</span></a>
+          <a class="footer-link" href="#pourquoi"><span class="es-text">Consultas</span><span class="fr-text">Consultations</span></a>
+          <a class="footer-link" href="#approche"><span class="es-text">Enfoque</span><span class="fr-text">Approche</span></a>
+          <a class="footer-link" href="#trayectoria"><span class="es-text">Trayectoria</span><span class="fr-text">Parcours</span></a>
+          <a class="footer-link" href="#tarifs"><span class="es-text">Honorarios</span><span class="fr-text">Tarifs</span></a>
+          <a class="footer-link" href="#articles"><span class="es-text">Artículos</span><span class="fr-text">Journal</span></a>
+          <a class="footer-link" href="#contacto"><span class="es-text">Contacto</span><span class="fr-text">Contact</span></a>
           <a class="footer-link" href="https://www.instagram.com/monterrubiopsicologa" target="_blank" rel="noopener">Instagram</a>
           <a class="footer-link" href="https://www.linkedin.com/in/carolina-monterrubio-2bba9420b/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
@@ -2042,10 +2074,9 @@ footer {
       <div>
         <div class="footer-col-title">Legal</div>
         <div class="footer-links">
-          <a class="footer-link" href="#">Aviso de privacidad (LFPDPPP)</a>
-          <a class="footer-link" href="#">Mentions légales</a>
-          <a class="footer-link" href="#">Politique de confidentialité</a>
-          <a class="footer-link" href="#">Accesibilidad</a>
+          <a class="footer-link" href="#"><span class="es-text">Aviso de privacidad (LFPDPPP)</span><span class="fr-text">Politique de confidentialité (LFPDPPP)</span></a>
+          <a class="footer-link" href="#"><span class="es-text">Menciones legales</span><span class="fr-text">Mentions légales</span></a>
+          <a class="footer-link" href="#"><span class="es-text">Accesibilidad</span><span class="fr-text">Accessibilité</span></a>
           <a class="footer-link" href="#">Mapa del sitio</a>
           <a class="footer-link" href="https://cedulaprofesional.sep.gob.mx" target="_blank" rel="noopener">Verificar cédula SEP ↗</a>
         </div>
@@ -2115,8 +2146,45 @@ document.querySelectorAll('[href^="#"]').forEach(a=>{
 });
 
 // ── REVEAL ON SCROLL
-// Add 'in' class to all reveal elements immediately as fallback
 document.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));
-// Also use IntersectionObserver for enhanced experience
-if('IntersectionObserver' in window){
-  const ro=new IntersectionObserv
+
+// ── LANGUE SWITCH
+function setLang(lang) {
+  var root = document.documentElement;
+  root.classList.remove('lang-es', 'lang-fr');
+  root.classList.add('lang-' + lang);
+  root.lang = lang;
+  document.querySelectorAll('.sb-lang').forEach(function(el) {
+    el.classList.toggle('active', el.textContent.trim() === lang.toUpperCase());
+  });
+  // Update placeholders dynamically
+  document.querySelectorAll('[data-ph-es]').forEach(function(el) {
+    el.placeholder = lang === 'fr' ? el.getAttribute('data-ph-fr') : el.getAttribute('data-ph-es');
+  });
+  // Update select options
+  var sel = document.getElementById('tipo');
+  if (sel) {
+    var opts = {
+      '': {es:'— Selecciona —', fr:'— Sélectionner —'},
+      'individual': {es:'Terapia individual', fr:'Thérapie individuelle'},
+      'pareja': {es:'Terapia de pareja', fr:'Thérapie de couple'},
+      'ansiedad': {es:'Ansiedad / depresión / burnout', fr:'Anxiété / dépression / burnout'},
+      'online': {es:'Consulta en línea', fr:'Consultation en ligne'},
+      'peritos': {es:'Peritaje psicológico', fr:'Expertise psychologique'},
+      'empresas': {es:'Psicología en empresas', fr:'Psychologie en entreprise'},
+      'otro': {es:'Otro', fr:'Autre'},
+    };
+    Array.from(sel.options).forEach(function(opt) {
+      if (opts[opt.value]) opt.text = opts[opt.value][lang];
+    });
+  }
+  try { localStorage.setItem('sitelang', lang); } catch(e){}
+}
+// Init au chargement
+(function(){
+  var saved = 'es';
+  try { saved = localStorage.getItem('sitelang') || 'es'; } catch(e){}
+  setLang(saved);
+})();
+</script>
+</body>
