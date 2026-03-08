@@ -993,12 +993,202 @@ footer {
   .footer-grid { grid-template-columns:1fr; gap:2rem; }
   .footer-bar { flex-direction:column; gap:.4rem; }
 }
+
+/* ════════════════════════════════════════
+   SVG DÉCORATIFS — formes organiques subtiles
+════════════════════════════════════════ */
+
+/* Cercle flottant section hero */
+#hero::after {
+  content:'';
+  position:absolute;
+  bottom: -80px; left: 60px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 1px solid rgba(198,106,74,.08);
+  pointer-events:none; z-index:1;
+}
+
+/* Arc décoratif section approche */
+#approche::before {
+  content:'';
+  position:absolute;
+  top: 40px; right: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(122,158,154,.1);
+  pointer-events:none;
+}
+
+/* Petit cercle accent trayectoria */
+#trayectoria::before {
+  content:'';
+  position:absolute;
+  top: 60px; right: 80px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(198,106,74,.12);
+  pointer-events:none;
+}
+
+/* Forme organique servicios */
+#servicios::after {
+  content:'';
+  position:absolute;
+  bottom: 40px; right: 40px;
+  width: 200px; height: 200px;
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  border: 1px solid rgba(122,158,154,.1);
+  pointer-events:none;
+}
+
+/* Ligne décorative verticale hero */
+.hero-content::after {
+  content:'';
+  position:absolute;
+  top: 15%; right: 0;
+  width: 1px; height: 40%;
+  background: linear-gradient(to bottom, transparent, rgba(198,106,74,.15), transparent);
+  pointer-events:none;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.deco-hero-arc {
+  animation: rotate-slow 60s linear infinite;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .deco-hero-arc { animation: none; }
+}
+
+/* ── WHATSAPP FLOATING BUTTON */
+.wa-float {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .25s, box-shadow .25s;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,.55);
+}
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+.wa-tooltip {
+  position: absolute;
+  right: 68px;
+  background: var(--graphite);
+  color: white;
+  font-size: .78rem;
+  padding: .45rem .9rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+}
+
+/* ── SOCIAL LINKS */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid rgba(155,107,181,.3);
+  border-radius: 50%;
+  color: rgba(247,243,237,.5);
+  text-decoration: none;
+  transition: all .25s;
+}
+.social-link:hover {
+  border-color: var(--sauge);
+  color: var(--sauge);
+  background: rgba(155,107,181,.1);
+}
+.social-link svg {
+  width: 16px; height: 16px;
+  fill: currentColor;
+}
+
+/* ── AGENDA SECTION */
+#agenda {
+  padding: var(--sec-pad);
+  background: var(--ivoire);
+}
+.agenda-intro {
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+.agenda-intro p {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.82;
+  margin-top: 1rem;
+}
+.calendly-wrapper {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(59,18,96,.08);
+  min-height: 700px;
+}
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+}
+.agenda-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.4rem;
+  background: rgba(155,107,181,.08);
+  border-left: 2px solid var(--sauge);
+  font-size: .9rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
 </style>
 </head>
 <body>
 
 <div class="cursor-dot" id="curDot"></div>
 <div class="cursor-ring" id="curRing"></div>
+
+
+<!-- WhatsApp Floating Button -->
+<a class="wa-float" href="https://wa.me/525538773998?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20con%20la%20Mtra.%20Carolina%20Monterrubio." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <span class="wa-tooltip">Escríbenos por WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
 
 <!-- URGENCY BAR -->
 <div class="urgency-bar" id="urgBar">
@@ -1053,7 +1243,13 @@ footer {
 
   <!-- ════ HERO ════ -->
   <section id="hero" aria-label="Presentación">
-    <div class="hero-content">
+    <div class="hero-content" style="position:relative;">
+    <!-- SVG décoratif hero -->
+    <svg class="deco-svg deco-hero-arc" aria-hidden="true" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:-40px;left:-60px;width:380px;height:380px;opacity:.06;pointer-events:none;z-index:1;">
+      <circle cx="200" cy="200" r="180" stroke="#6B2D8B" stroke-width="1"/>
+      <circle cx="200" cy="200" r="140" stroke="#6B2D8B" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="100" stroke="#9B6BB5" stroke-width="0.5"/>
+    </svg>
       <div class="hero-flag">
         <div class="hero-flag-dot" aria-hidden="true"></div>
         Psicóloga Clínica · Ciudad de México
@@ -1150,7 +1346,15 @@ footer {
   </section>
 
   <!-- ════ PREMIÈRE SÉANCE ════ -->
-  <section class="section" id="premiere">
+  <section class="section" id="premiere" style="position:relative;overflow:hidden;">
+    <!-- SVG décoratif premiere -->
+    <svg aria-hidden="true" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;right:0;width:340px;height:340px;opacity:.04;pointer-events:none;">
+      <line x1="0" y1="500" x2="500" y2="0" stroke="white" stroke-width="1"/>
+      <line x1="0" y1="400" x2="400" y2="0" stroke="white" stroke-width="0.7"/>
+      <line x1="0" y1="300" x2="300" y2="0" stroke="white" stroke-width="0.5"/>
+      <circle cx="420" cy="80" r="60" stroke="white" stroke-width="0.8" fill="none"/>
+      <circle cx="420" cy="80" r="40" stroke="#6B2D8B" stroke-width="0.5" fill="none"/>
+    </svg>
     <div class="premiere-grid">
       <div>
         <div class="sec-eyebrow reveal" style="color:var(--sauge-lt);">La primera sesión</div>
@@ -1203,7 +1407,13 @@ footer {
   </section>
 
   <!-- ════ APPROCHE ════ -->
-  <section class="section" id="approche">
+  <section class="section" id="approche" style="position:relative;overflow:hidden;">
+    <!-- SVG décoratif approche -->
+    <svg aria-hidden="true" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:30px;right:20px;width:260px;height:260px;opacity:.055;pointer-events:none;">
+      <path d="M150 20 C220 20, 280 80, 280 150 C280 220, 220 280, 150 280 C80 280, 20 220, 20 150 C20 80, 80 20, 150 20Z" stroke="#3B1260" stroke-width="1" fill="none"/>
+      <path d="M150 50 C200 50, 250 100, 250 150 C250 200, 200 250, 150 250 C100 250, 50 200, 50 150 C50 100, 100 50, 150 50Z" stroke="#9B6BB5" stroke-width="0.8" fill="none"/>
+      <path d="M150 80 C185 80, 220 115, 220 150 C220 185, 185 220, 150 220 C115 220, 80 185, 80 150 C80 115, 115 80, 150 80Z" stroke="#6B2D8B" stroke-width="0.5" fill="none"/>
+    </svg>
     <div class="approche-grid">
       <div class="approche-left">
         <div class="sec-eyebrow reveal">Approche clinique</div>
@@ -1319,7 +1529,12 @@ footer {
   </section>
 
   <!-- ════ TRAYECTORIA ════ -->
-  <section class="section" id="trayectoria">
+  <section class="section" id="trayectoria" style="position:relative;overflow:hidden;">
+    <!-- SVG décoratif trayectoria -->
+    <svg aria-hidden="true" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:40px;right:30px;width:220px;height:220px;opacity:.07;pointer-events:none;">
+      <path d="M200 30 C280 60, 370 140, 340 220 C310 300, 200 350, 120 320 C40 290, 20 180, 60 110 C100 40, 160 10, 200 30Z" stroke="#6B2D8B" stroke-width="1.2" fill="none"/>
+      <path d="M200 70 C260 90, 330 160, 305 225 C280 290, 190 325, 130 300 C70 275, 55 185, 90 125 C125 65, 165 52, 200 70Z" stroke="#9B6BB5" stroke-width="0.7" fill="none"/>
+    </svg>
     <div class="sec-eyebrow reveal">Trayectoria</div>
     <h2 class="sec-title reveal">Formada en <em>dos mundos.</em></h2>
     <div class="divider reveal"></div>
@@ -1445,6 +1660,37 @@ footer {
     </div>
   </section>
 
+
+  <!-- ════ AGENDA ════ -->
+  <section class="section" id="agenda">
+    <div class="sec-eyebrow"><span>────</span> Agenda </div>
+    <div class="agenda-intro">
+      <h2 class="sec-title">Reserva tu <em>consulta</em></h2>
+      <p>Selecciona el horario que mejor se adapte a ti. Recibirás una confirmación por correo electrónico con todos los detalles de tu cita.</p>
+    </div>
+
+    <div class="calendly-wrapper">
+      <!-- INSTRUCCIONES PARA EUNICE:
+           1. Crea tu cuenta gratuita en calendly.com
+           2. Conecta tu Gmail en Settings > Calendar
+           3. Crea un "Event Type" de 50 minutos
+           4. En el formulario añade campos: Nombre, Apellido, Edad, Teléfono (obligatorios)
+           5. Activa "Email confirmation" en Notifications
+           6. Copia tu URL Calendly (ej: calendly.com/carolina-monterrubio)
+           7. Reemplaza AQUI_TU_URL_CALENDLY por tu URL real
+      -->
+      <div class="calendly-inline-widget" 
+           data-url="https://calendly.com/caropsiclinica/30min?hide_gdpr_banner=1&primary_color=6B2D8B" 
+           style="min-width:320px;height:700px;">
+      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
+    <div class="agenda-note">
+      🔒 Tus datos personales son confidenciales y están protegidos conforme a la Ley Federal de Protección de Datos Personales (LFPDPPP). Solo serán utilizados para gestionar tu cita.
+    </div>
+  </section>
+
   <!-- ════ TARIFS ════ -->
   <section class="section" id="tarifs">
     <div class="sec-eyebrow reveal">Tarifs & modalités</div>
@@ -1523,7 +1769,35 @@ footer {
   </section>
 
   <!-- ════ CONTACTO ════ -->
-  <section class="section" id="contacto">
+  <section class="section" id="contacto" style="position:relative;overflow:hidden;">
+    <!-- SVG décoratif contacto -->
+    <svg aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:40px;right:20px;width:180px;height:180px;opacity:.07;pointer-events:none;">
+      <circle cx="20" cy="20" r="3" fill="#6B2D8B"/>
+      <circle cx="60" cy="20" r="3" fill="#6B2D8B"/>
+      <circle cx="100" cy="20" r="3" fill="#6B2D8B"/>
+      <circle cx="140" cy="20" r="3" fill="#9B6BB5"/>
+      <circle cx="180" cy="20" r="3" fill="#9B6BB5"/>
+      <circle cx="20" cy="60" r="3" fill="#6B2D8B"/>
+      <circle cx="60" cy="60" r="3" fill="#9B6BB5"/>
+      <circle cx="100" cy="60" r="3" fill="#9B6BB5"/>
+      <circle cx="140" cy="60" r="3" fill="#6B2D8B"/>
+      <circle cx="180" cy="60" r="3" fill="#6B2D8B"/>
+      <circle cx="20" cy="100" r="3" fill="#9B6BB5"/>
+      <circle cx="60" cy="100" r="3" fill="#6B2D8B"/>
+      <circle cx="100" cy="100" r="3" fill="#6B2D8B"/>
+      <circle cx="140" cy="100" r="3" fill="#9B6BB5"/>
+      <circle cx="180" cy="100" r="3" fill="#9B6BB5"/>
+      <circle cx="20" cy="140" r="3" fill="#6B2D8B"/>
+      <circle cx="60" cy="140" r="3" fill="#9B6BB5"/>
+      <circle cx="100" cy="140" r="3" fill="#6B2D8B"/>
+      <circle cx="140" cy="140" r="3" fill="#6B2D8B"/>
+      <circle cx="180" cy="140" r="3" fill="#9B6BB5"/>
+      <circle cx="20" cy="180" r="3" fill="#9B6BB5"/>
+      <circle cx="60" cy="180" r="3" fill="#6B2D8B"/>
+      <circle cx="100" cy="180" r="3" fill="#9B6BB5"/>
+      <circle cx="140" cy="180" r="3" fill="#9B6BB5"/>
+      <circle cx="180" cy="180" r="3" fill="#6B2D8B"/>
+    </svg>
     <div class="sec-eyebrow reveal">Contacto</div>
     <h2 class="sec-title reveal">El primer paso<br>es <em>escribir.</em></h2>
     <div class="divider reveal"></div>
