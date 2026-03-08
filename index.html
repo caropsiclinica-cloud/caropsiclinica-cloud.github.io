@@ -1449,7 +1449,7 @@ footer {
       </div>
 
       <div class="hero-actions">
-        <a class="btn-primary" href="#agenda"><span><span class="es-text">Agendar consulta</span><span class="fr-text">Prendre rendez-vous</span></span></a>
+        <a class="btn-primary" href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener"><span><span class="es-text">Agendar consulta</span><span class="fr-text">Prendre rendez-vous</span></span></a>
         <a class="btn-ghost" href="#pourquoi"><span class="es-text">Saber más</span><span class="fr-text">En savoir plus</span></a>
       </div>
     </div>
@@ -1568,7 +1568,7 @@ footer {
           <span class="es-text">Las consultas se realizan en el consultorio en Ciudad de México o por videollamada segura, con la misma calidad clínica y el mismo marco de confidencialidad — donde estés en México, Francia o cualquier país hispanohablante o francófono.</span><span class="fr-text">Les consultations se déroulent au cabinet à Mexico ou par vidéoconférence sécurisée, avec la même qualité clinique et le même cadre de confidentialité — où que vous soyez au Mexique, en France ou dans tout pays hispanophone ou francophone.</span>
         </p>
         <div style="margin-top:2rem;" class="reveal">
-          <a class="btn-primary" href="#contacto" style="display:inline-block;"><span><span class="es-text">Reservar una sesión</span><span class="fr-text">Réserver une séance</span></span></a>
+          <a class="btn-primary" href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener" style="display:inline-block;"><span><span class="es-text">Reservar una sesión</span><span class="fr-text">Réserver une séance</span></span></a>
         </div>
       </div>
     </div>
@@ -2028,7 +2028,7 @@ footer {
         </div>
         <div class="ct-item">
           <div class="ct-label"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></div>
-          <div class="ct-value"><a href="mailto:carolina@monterrubiopsicologa.com" style="color:var(--petrole);text-decoration:none;">carolina@monterrubiopsicologa.com</a></div>
+          <div class="ct-value"><a href="/cdn-cgi/l/email-protection#482b293a2724212629082527263c2d3a3a3d2a2127383b212b2724272f29662b2725" style="color:var(--petrole);text-decoration:none;"><span class="__cf_email__" data-cfemail="630002110c0f0a0d02230e0c0d1706111116010a0c13100a000c0f0c04024d000c0e">[email&#160;protected]</span></a></div>
           <div class="ct-sub2"><span class="es-text">Respuesta en menos de 24 h</span><span class="fr-text">Réponse en moins de 24 h</span></div>
         </div>
         <div class="ct-item">
@@ -2142,7 +2142,7 @@ footer {
 
 </main>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CURSOR STYLISÉ
 (function(){
   var dot = document.getElementById('curDot');
@@ -2227,17 +2227,18 @@ function setLang(lang) {
       'otro': {es:'Otro', fr:'Autre'},
     };
     Array.from(sel.options).forEach(function(opt) {
-      if (opts[opt.value]) opt.textContent = opts[opt.value][lang];
+      var v = opt.value;
+      if (opts[v]) opt.text = opts[v][lang] || opt.text;
     });
   }
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch(e) {}
 }
 
-// ── INIT LANGUE
-(function(){
-  var saved = localStorage.getItem('lang') || 'es';
+document.addEventListener('DOMContentLoaded', function() {
+  var saved = 'es';
+  try { saved = localStorage.getItem('lang') || 'es'; } catch(e) {}
   setLang(saved);
-})();
+});
 </script>
 </body>
 </html>
