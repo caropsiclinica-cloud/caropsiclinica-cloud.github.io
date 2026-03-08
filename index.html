@@ -1059,56 +1059,65 @@ footer {
    RESPONSIVE MOBILE
 ════════════════════════════════════════ */
 @media(max-width:600px){
-  html { font-size:16px; }
+  html { font-size:14px; }
 
-  /* Sidebar → menu hamburger simplifié */
-  .sidebar {
-    padding: .8rem 1rem;
-    gap: .4rem;
-  }
-  .sb-nav { display:none; } /* caché — navigation via scroll */
-  .sb-foot { width:auto; }
-  .sb-cta { font-size:.6rem; padding:.4rem .8rem; }
+  /* Sidebar visible et compacte */
+  .sidebar { padding:.7rem .8rem; gap:.3rem; justify-content:space-between; }
+  .sb-name { display:none; }
+  .sb-psi { width:22px; height:22px; font-size:.85rem; }
+  .sb-nav { display:flex; flex-direction:row; flex-wrap:wrap; gap:.1rem; flex:1; justify-content:center; }
+  .sb-link { padding:.28rem .4rem; font-size:.5rem; letter-spacing:.05em; }
+  .sb-link-n { display:none; }
+  .sb-foot { width:auto; flex-shrink:0; }
+  .sb-cta { font-size:.52rem; padding:.32rem .6rem; }
+  .sb-langs { gap:.2rem; }
+  .sb-lang { font-size:.58rem; padding:.18rem .38rem; }
 
   /* Urgency bar */
-  .urgency-bar { font-size:.52rem; letter-spacing:.05em; }
+  .urgency-bar { font-size:.5rem; letter-spacing:.04em; padding:.4rem .8rem; }
 
   /* Hero */
-  .hero-content { padding: 2.5rem 1.2rem 2rem; }
-  .hero-h1 { font-size: clamp(2.4rem,10vw,3.5rem); }
-  .hero-intro { font-size:.9rem; }
-  .hero-pillars { flex-direction:column; gap:.8rem; }
-  .hero-actions { flex-direction:column; gap:.7rem; }
-  .hero-actions a { text-align:center; width:100%; }
-  .hero-degrees .degree { font-size:.7rem; }
-  .hero-photo { min-height:60vw; }
+  .hero-content { padding:2rem 1rem 1.5rem; }
+  .hero-h1 { font-size:clamp(1.8rem,7.5vw,2.6rem); line-height:1.1; }
+  .hero-intro { font-size:.82rem; line-height:1.72; max-width:100%; }
+  .hero-rule { margin:1.1rem 0; }
+  .hero-pillars { flex-direction:column; gap:.6rem; }
+  .hero-pillar { font-size:.76rem; }
+  .hero-actions { flex-direction:column; gap:.6rem; }
+  .hero-actions a { text-align:center; width:100%; font-size:.74rem; padding:.65rem 1rem; }
+  .hero-degrees .degree { font-size:.64rem; }
+  .hero-photo { min-height:50vw; }
 
   /* Sections */
-  .section { padding: 2.8rem 1.2rem 2rem; }
-  #bilingue { padding: 2.5rem 1.2rem; }
-  .sec-title { font-size: clamp(1.8rem,7vw,2.8rem); }
+  .section { padding:2.2rem 1rem 1.8rem; }
+  #bilingue { padding:2rem 1rem; }
+  .sec-title { font-size:clamp(1.45rem,6vw,2.1rem); }
+  .sec-eyebrow { font-size:.56rem; }
+  p { font-size:.86rem; line-height:1.73; }
 
-  /* Grids → 1 colonne */
-  .motifs-grid { grid-template-columns:1fr; }
-  .articles-grid { grid-template-columns:1fr; }
-  .tarifs-grid { grid-template-columns:1fr; }
+  /* Grids 1 colonne */
+  .motifs-grid,.articles-grid,.tarifs-grid,.premiere-grid,.approche-grid,.contact-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; gap:1.2rem; }
 
-  /* Cards */
-  .article-card { padding:0 0 1rem; }
-  .ac-foot { padding:.8rem 1.2rem; }
+  /* Cards articles */
+  .ac-title { font-size:.95rem; }
+  .ac-excerpt { font-size:.8rem; }
+  .ac-foot { padding:.75rem 1rem; font-size:.72rem; }
 
   /* Contact */
-  .ct-item { flex-direction:column; gap:.3rem; }
-  .finp, .ftxt { font-size:.9rem; }
+  .ct-label { font-size:.63rem; }
+  .ct-value { font-size:.83rem; }
+  .finp,.ftxt { font-size:.84rem; }
 
   /* Footer */
-  footer { padding:2.5rem 1.2rem 5rem; }
-  .footer-bar { font-size:.7rem; }
+  footer { padding:2rem 1rem 5rem; }
+  .footer-bar { font-size:.63rem; flex-direction:column; gap:.3rem; text-align:center; }
 
-  /* Float social — repositionné */
-  .float-social { bottom:16px; right:12px; gap:.4rem; }
-  .float-btn, .float-btn-cal { width:30px; height:30px; }
-  .float-btn svg, .float-btn-cal svg { width:13px; height:13px; }
+  /* Float social */
+  .float-social { bottom:14px; right:10px; gap:.32rem; }
+  .float-btn,.float-btn-cal { width:28px; height:28px; }
+  .float-btn svg,.float-btn-cal svg { width:12px; height:12px; }
+  .float-tooltip { display:none; }
 }
 
 /* ════════════════════════════════════════
@@ -2101,7 +2110,7 @@ footer {
       <span class="es-text">Contenidos de psicoeducación clínica — sin diagnósticos por internet, sin promesas. Solo herramientas y reflexiones útiles.</span><span class="fr-text">Contenus de psychoéducation clinique — sans diagnostics par internet, sans promesses. Seulement des outils et des réflexions utiles.</span>
     </p>
 
-    <div class="articles-grid reveal" style="grid-template-columns:repeat(3,1fr);">
+    <div class="articles-grid reveal">
       <article class="article-card">
         <span class="ac-cat cat-1"><span class="es-text">Ansiedad · Salud Mental</span><span class="fr-text">Anxiété · Santé Mentale</span></span>
         <h3 class="ac-title"><span class="es-text">Cuando la alarma no se apaga</span><span class="fr-text">Quand l'alarme ne s'éteint pas</span></h3>
@@ -2242,7 +2251,7 @@ footer {
         </div>
         <div class="ct-item">
           <div class="ct-label"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></div>
-          <div class="ct-value"><a href="/cdn-cgi/l/email-protection#2c4f4d5e434045424d6c41434258495e5e594e45435c5f454f4340434b4d024f4341" style="color:var(--petrole);text-decoration:none;"><span class="__cf_email__" data-cfemail="c0a3a1b2afaca9aea180adafaeb4a5b2b2b5a2a9afb0b3a9a3afacafa7a1eea3afad">[email&#160;protected]</span></a></div>
+          <div class="ct-value"><a href="mailto:carolina@monterrubiopsicologa.com" style="color:var(--petrole);text-decoration:none;">carolina@monterrubiopsicologa.com</a></div>
           <div class="ct-sub2"><span class="es-text">Respuesta en menos de 24 h</span><span class="fr-text">Réponse en moins de 24 h</span></div>
         </div>
         <div class="ct-item">
@@ -2459,4 +2468,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!tab) return;
     var hero = document.getElementById('hero');
     function onScroll(){
-      var thresho
+      var threshold = hero ? hero.offsetHeight * 0.2 : 200;
+      if(window.scrollY > threshold){ tab.classList.add('visible'); }
+      else { tab.classList.remove('visible'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+  })();
+});
+</script>
+</body>
+</html>
