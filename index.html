@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0E3A40">
+<meta name="theme-color" content="#3B1260">
 
 <title>Eunice Carolina Monterrubio Roché — Psicóloga Clínica · CDMX · Consultas en español y francés</title>
 <meta name="description" content="Psicóloga clínica en Ciudad de México. Consultas individuales, de pareja y en línea. Bilingüe español–francés. Formación en la Université Paris VIII. Espacio seguro, confidencial y estructurado.">
@@ -94,14 +94,14 @@
 :root {
   --ivoire:     #F7F3ED;
   --graphite:   #1F2933;
-  --petrole:    #0E3A40;
-  --terra:      #C66A4A;
-  --sauge:      #7A9E9A;
+  --petrole:    #3B1260;
+  --terra:      #6B2D8B;
+  --sauge:      #9B6BB5;
   --brume:      #D8D2C8;
   --white:      #FDFAF7;
-  --petrole-lt: #164f58;
-  --terra-lt:   #d98068;
-  --sauge-lt:   #a0bfbb;
+  --petrole-lt: #5a2d82;
+  --terra-lt:   #9b5abf;
+  --sauge-lt:   #c9a8e0;
   --text-body:  #3a4a54;
   --text-mid:   #6b7a82;
   --text-light: #9aaab2;
@@ -1174,6 +1174,72 @@ footer {
   color: var(--text-body);
   line-height: 1.65;
 }
+
+/* ── GOOGLE MAPS */
+.maps-container {
+  margin-top: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(59,18,96,.08);
+}
+.maps-container iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  display: block;
+}
+.maps-caption {
+  background: white;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.maps-caption-left {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.maps-pin {
+  width: 36px; height: 36px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.maps-pin svg { width: 18px; height: 18px; fill: white; }
+.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
+.maps-address strong { display: block; font-weight: 600; }
+.maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--terra);
+  color: white;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .6rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: .03em;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.maps-link:hover { opacity: .85; }
+
+/* ── GOOGLE MAPS */
+.maps-container { margin-top: 3rem; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 20px rgba(59,18,96,.08); }
+.maps-container iframe { width: 100%; height: 380px; border: 0; display: block; }
+.maps-caption { background: white; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.maps-caption-left { display: flex; align-items: center; gap: .8rem; }
+.maps-pin { width: 36px; height: 36px; background: var(--terra); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.maps-pin svg { width: 18px; height: 18px; fill: white; }
+.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
+.maps-address strong { display: block; font-weight: 600; }
+.maps-link { display: inline-flex; align-items: center; gap: .4rem; background: var(--terra); color: white; font-size: .85rem; font-weight: 600; padding: .6rem 1.2rem; border-radius: 2px; text-decoration: none; transition: opacity .2s; }
+.maps-link:hover { opacity: .85; }
 </style>
 </head>
 <body>
@@ -1669,22 +1735,117 @@ footer {
       <p>Selecciona el horario que mejor se adapte a ti. Recibirás una confirmación por correo electrónico con todos los detalles de tu cita.</p>
     </div>
 
-    <div class="calendly-wrapper">
-      <!-- INSTRUCCIONES PARA EUNICE:
-           1. Crea tu cuenta gratuita en calendly.com
-           2. Conecta tu Gmail en Settings > Calendar
-           3. Crea un "Event Type" de 50 minutos
-           4. En el formulario añade campos: Nombre, Apellido, Edad, Teléfono (obligatorios)
-           5. Activa "Email confirmation" en Notifications
-           6. Copia tu URL Calendly (ej: calendly.com/carolina-monterrubio)
-           7. Reemplaza AQUI_TU_URL_CALENDLY por tu URL real
-      -->
-      <div class="calendly-inline-widget" 
-           data-url="https://calendly.com/caropsiclinica/30min?hide_gdpr_banner=1&primary_color=6B2D8B" 
-           style="min-width:320px;height:700px;">
+    <!-- Agenda 2 opciones -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem;">
+      
+      <!-- Presencial -->
+      <div style="background:white; border-radius:4px; padding:2.5rem 2rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--terra);">
+        <div style="font-size:2.5rem; margin-bottom:1rem;">📍</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">Consulta Presencial</h3>
+        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Cabinet · Ciudad de México</p>
+        <p style="color:var(--terra); font-weight:600; font-size:1rem; margin-bottom:1.5rem;">Lunes a Viernes · 9h00 – 17h00</p>
+        <p style="color:var(--text-body); font-size:.9rem; line-height:1.6; margin-bottom:2rem;">Sesión individual en consultorio privado en CDMX.</p>
+        <a href="https://calendly.com/caropsiclinica/60min" 
+           target="_blank" rel="noopener"
+           style="display:inline-block; background:var(--terra); color:white; font-family:'Source Sans 3',sans-serif; font-size:.95rem; font-weight:600; padding:.9rem 2rem; border-radius:2px; text-decoration:none; letter-spacing:.04em;"
+           onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+          Reservar presencial →
+        </a>
       </div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+      <!-- En línea -->
+      <div style="background:white; border-radius:4px; padding:2.5rem 2rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--sauge);">
+        <div style="font-size:2.5rem; margin-bottom:1rem;">💻</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">Consulta en Línea</h3>
+        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Videollamada · Google Meet</p>
+        <p style="color:var(--sauge); font-weight:600; font-size:1rem; margin-bottom:1.5rem;">Lunes a Viernes · 9h00 – 20h00</p>
+        <p style="color:var(--text-body); font-size:.9rem; line-height:1.6; margin-bottom:2rem;">Sesión por videollamada, desde cualquier lugar.</p>
+        <a href="https://calendly.com/caropsiclinica/consulta-psicologa-en-linea" 
+           target="_blank" rel="noopener"
+           style="display:inline-block; background:var(--sauge); color:white; font-family:'Source Sans 3',sans-serif; font-size:.95rem; font-weight:600; padding:.9rem 2rem; border-radius:2px; text-decoration:none; letter-spacing:.04em;"
+           onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+          Reservar en línea →
+        </a>
+      </div>
+
     </div>
+
+    <!-- Responsive mobile -->
+    <style>
+    @media (max-width: 640px) {
+      .agenda-cards { grid-template-columns: 1fr !important; }
+    }
+    
+/* ── GOOGLE MAPS */
+.maps-container {
+  margin-top: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(59,18,96,.08);
+}
+.maps-container iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  display: block;
+}
+.maps-caption {
+  background: white;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.maps-caption-left {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.maps-pin {
+  width: 36px; height: 36px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.maps-pin svg { width: 18px; height: 18px; fill: white; }
+.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
+.maps-address strong { display: block; font-weight: 600; }
+.maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--terra);
+  color: white;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .6rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: .03em;
+  white-space: nowrap;
+  transition: opacity .2s;
+}
+.maps-link:hover { opacity: .85; }
+
+/* ── GOOGLE MAPS */
+.maps-container { margin-top: 3rem; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 20px rgba(59,18,96,.08); }
+.maps-container iframe { width: 100%; height: 380px; border: 0; display: block; }
+.maps-caption { background: white; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.maps-caption-left { display: flex; align-items: center; gap: .8rem; }
+.maps-pin { width: 36px; height: 36px; background: var(--terra); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.maps-pin svg { width: 18px; height: 18px; fill: white; }
+.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
+.maps-address strong { display: block; font-weight: 600; }
+.maps-link { display: inline-flex; align-items: center; gap: .4rem; background: var(--terra); color: white; font-size: .85rem; font-weight: 600; padding: .6rem 1.2rem; border-radius: 2px; text-decoration: none; transition: opacity .2s; }
+.maps-link:hover { opacity: .85; }
+</style>
+    
+    <!-- Calendly inline widget como fallback -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <div class="agenda-note">
       🔒 Tus datos personales son confidenciales y están protegidos conforme a la Ley Federal de Protección de Datos Personales (LFPDPPP). Solo serán utilizados para gestionar tu cita.
@@ -1880,6 +2041,27 @@ footer {
           <a class="ct-soc" href="#">📍 Google Maps</a>
           <a class="ct-soc" href="#">💬 WhatsApp</a>
         </div>
+      </div>
+    </div>
+
+    <div class="maps-container">
+      <iframe
+        src="https://maps.google.com/maps?q=19.415516,-99.100460&z=16&output=embed"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación del consultorio">
+      </iframe>
+      <div class="maps-caption">
+        <div class="maps-caption-left">
+          <div class="maps-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          </div>
+          <div class="maps-address">
+            <strong>Consultorio · Ciudad de México</strong>
+            Rtno. 29 Fray Servando Teresa de Mier 51, Jardín Balbuena<br>Venustiano Carranza, 15900 · Ciudad de México, CDMX
+          </div>
+        </div>
+        <a class="maps-link" href="https://google.com/maps/place/Mtra.+Carolina+Monterrubio+Psic%C3%B3loga+Cl%C3%ADnica/data=!4m2!3m1!1s0x0:0xb2da5bde02da5c3?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener">Ver en Google Maps</a>
       </div>
     </div>
   </section>
