@@ -1292,10 +1292,108 @@ footer {
 .float-tooltip { position:absolute; right:44px; background:#1F2933; color:white; font-size:.72rem; padding:.3rem .65rem; border-radius:4px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; font-family:'Source Sans 3',sans-serif; }
 .float-btn:hover .float-tooltip, .float-btn-cal:hover .float-tooltip { opacity:1; }
 .float-wa { background:#25D366; }
+
+/* ── LIEN ARTICLES DANS LE HERO ── */
+.hero-articles-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--sauge);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color .2s;
+}
+.hero-articles-link:hover { color: var(--terra); }
+.hero-articles-link::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--sauge);
+}
+
+/* ── ONGLET FIXE ARTICLES (après scroll) ── */
+.tab-articles {
+  position: fixed;
+  left: var(--sidebar-w);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  z-index: 8000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s, transform .35s;
+}
+.tab-articles.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+.tab-articles a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--petrole);
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .75rem .9rem;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 3px 0 18px rgba(59,18,96,.22);
+  transition: background .2s, color .2s;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.tab-articles a:hover {
+  background: var(--terra);
+  color: #fff;
+}
+.tab-articles .ta-top {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+.tab-articles .ta-top::before {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--sauge);
+  flex-shrink: 0;
+}
+.tab-articles .ta-sub {
+  padding-left: .55rem;
+  color: rgba(255,255,255,.45);
+  font-size: .55rem;
+  letter-spacing: .15em;
+}
+@media(max-width:768px){ .tab-articles { display:none; } }
 .float-ig { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
 .float-gm { background:#EA4335; }
 .float-li { background:#0077B5; }
 </style>
+
+<!-- Onglet fixe articles (apparaît au scroll) -->
+<div class="tab-articles" id="tabArticles">
+  <a href="#articles">
+    <div class="ta-top">
+      <span class="es-text">Artículos →</span>
+      <span class="fr-text">Articles →</span>
+    </div>
+    <div class="ta-sub">
+      <span class="es-text">& reflexiones</span>
+      <span class="fr-text">& réflexions</span>
+    </div>
+  </a>
+</div>
 
 <div class="float-social">
   <!-- Calendly -->
@@ -1423,12 +1521,18 @@ footer {
         <span class="es-text">Psicóloga Clínica · Ciudad de México</span><span class="fr-text">Psychologue Clinicienne · Ciudad de México</span>
       </div>
 
-      <h1 class="hero-h1">
-        Eunice<br>
-        <em>Carolina</em><br>
-        Monterrubio<br>
-        Roché
-      </h1>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
+        <h1 class="hero-h1">
+          Eunice<br>
+          <em>Carolina</em><br>
+          Monterrubio<br>
+          Roché
+        </h1>
+        <a href="#articles" style="flex-shrink:0;margin-top:.5rem;display:inline-flex;align-items:center;gap:.4rem;font-family:'Source Sans 3',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sauge);text-decoration:none;transition:color .2s;white-space:nowrap;" onmouseover="this.style.color='var(--terra)'" onmouseout="this.style.color='var(--sauge)'">
+          <span class="es-text">Artículos & reflexiones →</span>
+          <span class="fr-text">Articles & réflexions →</span>
+        </a>
+      </div>
 
       <div class="hero-rule" aria-hidden="true"></div>
 
@@ -1905,32 +2009,50 @@ footer {
       <span class="es-text">Contenidos de psicoeducación clínica — sin diagnósticos por internet, sin promesas. Solo herramientas y reflexiones útiles.</span><span class="fr-text">Contenus de psychoéducation clinique — sans diagnostics par internet, sans promesses. Seulement des outils et des réflexions utiles.</span>
     </p>
 
-    <div class="articles-grid reveal">
+    <div class="articles-grid reveal" style="grid-template-columns:repeat(3,1fr);">
       <article class="article-card">
-        <span class="ac-cat cat-1"><span class="es-text">Ansiedad & cuerpo</span><span class="fr-text">Anxiété & corps</span></span>
-        <h3 class="ac-title"><span class="es-text">¿Por qué la ansiedad no "se cura" sola?</span><span class="fr-text">Pourquoi l'anxiété ne "guérit" pas seule ?</span></h3>
-        <p class="ac-excerpt"><span class="es-text">La ansiedad crónica no es debilidad — es una respuesta aprendida que el sistema nervioso puede reaprender. Una mirada clínica sin sensacionalismo.</span><span class="fr-text">L'anxiété chronique n'est pas une faiblesse — c'est une réponse apprise que le système nerveux peut désapprendre. Un regard clinique sans sensationnalisme.</span></p>
+        <span class="ac-cat cat-1"><span class="es-text">Ansiedad · Salud Mental</span><span class="fr-text">Anxiété · Santé Mentale</span></span>
+        <h3 class="ac-title"><span class="es-text">Cuando la alarma no se apaga</span><span class="fr-text">Quand l'alarme ne s'éteint pas</span></h3>
+        <p class="ac-excerpt"><span class="es-text">La ansiedad crónica no es debilidad — es una respuesta aprendida del sistema nervioso. Cómo reconocerla y trabajarla.</span><span class="fr-text">L'anxiété chronique n'est pas une faiblesse — c'est une réponse apprise. Comment la reconnaître et la travailler.</span></p>
         <div class="ac-foot">
           <span><span class="es-text">8 min de lectura</span><span class="fr-text">8 min de lecture</span></span>
-          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
+          <a href="articles/ansiedad-cdmx.html"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
       <article class="article-card">
-        <span class="ac-cat cat-2">Vivre entre deux cultures</span>
-        <h3 class="ac-title"><span class="es-text">Cuando cambiar de país cambia también quién uno es</span><span class="fr-text">Quand changer de pays change aussi qui l'on est</span></h3>
-        <p class="ac-excerpt"><span class="es-text">La migración no solo desplaza un cuerpo — recompone una identidad. Lo que la clínica puede escuchar de esa experiencia.</span><span class="fr-text">La migration ne déplace pas seulement un corps — elle recompose une identité. Ce que la clinique peut entendre de cette expérience.</span></p>
+        <span class="ac-cat cat-2"><span class="es-text">Burnout · Trabajo</span><span class="fr-text">Burnout · Travail</span></span>
+        <h3 class="ac-title"><span class="es-text">Cuando el agotamiento se vuelve clínico</span><span class="fr-text">Quand l'épuisement devient clinique</span></h3>
+        <p class="ac-excerpt"><span class="es-text">México tiene una de las tasas de burnout más altas del mundo. Cómo reconocerlo y trabajarlo antes de llegar al límite.</span><span class="fr-text">Le Mexique a l'une des prévalences de burnout les plus élevées au monde. Comment le reconnaître et agir avant le point de rupture.</span></p>
         <div class="ac-foot">
-          <span><span class="es-text">6 min de lectura</span><span class="fr-text">6 min de lecture</span></span>
-          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
+          <span><span class="es-text">9 min de lectura</span><span class="fr-text">9 min de lecture</span></span>
+          <a href="articles/burnout-psicologia-cdmx.html"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
       <article class="article-card">
-        <span class="ac-cat cat-3"><span class="es-text">Clínica & sociedad</span><span class="fr-text">Clinique & société</span></span>
-        <h3 class="ac-title"><span class="es-text">Género, normas y malestar psíquico: lo que la clínica no puede ignorar</span><span class="fr-text">Genre, normes et malaise psychique : ce que la clinique ne peut ignorer</span></h3>
-        <p class="ac-excerpt"><span class="es-text">Por qué la psicología sin perspectiva social reproduce lo que debería cuestionar — y cómo un enfoque crítico cambia la práctica.</span><span class="fr-text">Pourquoi la psychologie sans perspective sociale reproduit ce qu'elle devrait questionner — et comment une approche critique change la pratique.</span></p>
+        <span class="ac-cat cat-3"><span class="es-text">Duelo · Pérdida</span><span class="fr-text">Deuil · Perte</span></span>
+        <h3 class="ac-title"><span class="es-text">Cuando perder desestabiliza todo</span><span class="fr-text">Quand perdre déstabilise tout</span></h3>
+        <p class="ac-excerpt"><span class="es-text">El duelo no sigue etapas ordenadas ni tiene un tiempo correcto. Lo que el acompañamiento terapéutico puede ofrecer.</span><span class="fr-text">Le deuil ne suit pas d'étapes ordonnées ni de temps imparti. Ce qu'un accompagnement thérapeutique peut offrir.</span></p>
+        <div class="ac-foot">
+          <span><span class="es-text">8 min de lectura</span><span class="fr-text">8 min de lecture</span></span>
+          <a href="articles/duelo-cdmx.html"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
+        </div>
+      </article>
+      <article class="article-card">
+        <span class="ac-cat cat-1"><span class="es-text">Vínculos · Relaciones</span><span class="fr-text">Liens · Relations</span></span>
+        <h3 class="ac-title"><span class="es-text">Cuando el amor duele más de lo que da</span><span class="fr-text">Quand l'amour fait plus mal qu'il ne donne</span></h3>
+        <p class="ac-excerpt"><span class="es-text">La dependencia afectiva no es amor intenso — es un vínculo organizado alrededor del miedo. Tiene origen y tiene camino.</span><span class="fr-text">La dépendance affective n'est pas de l'amour intense — c'est un lien organisé autour de la peur. Elle a une origine et un chemin.</span></p>
+        <div class="ac-foot">
+          <span><span class="es-text">9 min de lectura</span><span class="fr-text">9 min de lecture</span></span>
+          <a href="articles/dependencia-afectiva-cdmx.html"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
+        </div>
+      </article>
+      <article class="article-card">
+        <span class="ac-cat cat-2"><span class="es-text">Trauma · Salud Mental</span><span class="fr-text">Trauma · Santé Mentale</span></span>
+        <h3 class="ac-title"><span class="es-text">Cuando el pasado no termina de irse</span><span class="fr-text">Quand le passé ne passe pas</span></h3>
+        <p class="ac-excerpt"><span class="es-text">El trauma no siempre es un recuerdo vívido. A veces vive en el cuerpo, en las reacciones, en los vínculos. Qué puede hacer la terapia.</span><span class="fr-text">Le trauma n'est pas toujours un souvenir vif. Il vit parfois dans le corps, dans les réactions, dans les liens. Ce que la thérapie peut faire.</span></p>
         <div class="ac-foot">
           <span><span class="es-text">10 min de lectura</span><span class="fr-text">10 min de lecture</span></span>
-          <a href="#"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
+          <a href="articles/trauma-psicologia-cdmx.html"><span class="es-text">Leer →</span><span class="fr-text">Lire →</span></a>
         </div>
       </article>
     </div>
@@ -2028,7 +2150,7 @@ footer {
         </div>
         <div class="ct-item">
           <div class="ct-label"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></div>
-          <div class="ct-value"><a href="/cdn-cgi/l/email-protection#482b293a2724212629082527263c2d3a3a3d2a2127383b212b2724272f29662b2725" style="color:var(--petrole);text-decoration:none;"><span class="__cf_email__" data-cfemail="630002110c0f0a0d02230e0c0d1706111116010a0c13100a000c0f0c04024d000c0e">[email&#160;protected]</span></a></div>
+          <div class="ct-value"><a href="mailto:carolina@monterrubiopsicologa.com" style="color:var(--petrole);text-decoration:none;">carolina@monterrubiopsicologa.com</a></div>
           <div class="ct-sub2"><span class="es-text">Respuesta en menos de 24 h</span><span class="fr-text">Réponse en moins de 24 h</span></div>
         </div>
         <div class="ct-item">
@@ -2238,6 +2360,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var saved = 'es';
   try { saved = localStorage.getItem('lang') || 'es'; } catch(e) {}
   setLang(saved);
+
+  // Onglet articles — apparaît après le hero
+  (function(){
+    var tab = document.getElementById('tabArticles');
+    if (!tab) return;
+    var hero = document.getElementById('hero');
+    function onScroll(){
+      var threshold = hero ? hero.offsetHeight * 0.2 : 200;
+      if(window.scrollY > threshold){ tab.classList.add('visible'); }
+      else { tab.classList.remove('visible'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+  })();
+
 });
 </script>
 </body>
