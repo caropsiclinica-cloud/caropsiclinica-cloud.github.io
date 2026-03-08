@@ -1735,113 +1735,29 @@ footer {
       <p>Selecciona el horario que mejor se adapte a ti. Recibirás una confirmación por correo electrónico con todos los detalles de tu cita.</p>
     </div>
 
-    <!-- Agenda 2 opciones -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem;">
-      
-      <!-- Presencial -->
+    <!-- Agenda 1 bouton -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem; max-width:700px;">
       <div style="background:white; border-radius:4px; padding:2.5rem 2rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--terra);">
         <div style="font-size:2.5rem; margin-bottom:1rem;">📍</div>
-        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">Consulta Presencial</h3>
-        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Cabinet · Ciudad de México</p>
-        <p style="color:var(--terra); font-weight:600; font-size:1rem; margin-bottom:1.5rem;">Lunes a Viernes · 9h00 – 17h00</p>
-        <p style="color:var(--text-body); font-size:.9rem; line-height:1.6; margin-bottom:2rem;">Sesión individual en consultorio privado en CDMX.</p>
-        <a href="https://calendly.com/caropsiclinica/60min" 
-           target="_blank" rel="noopener"
-           style="display:inline-block; background:var(--terra); color:white; font-family:'Source Sans 3',sans-serif; font-size:.95rem; font-weight:600; padding:.9rem 2rem; border-radius:2px; text-decoration:none; letter-spacing:.04em;"
-           onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-          Reservar presencial →
-        </a>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">Presencial</h3>
+        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Consultorio · CDMX</p>
+        <p style="color:var(--terra); font-weight:600; font-size:.95rem;">Mar · Jue · Sáb · 9h–20h</p>
       </div>
-
-      <!-- En línea -->
       <div style="background:white; border-radius:4px; padding:2.5rem 2rem; box-shadow:0 2px 20px rgba(59,18,96,.08); text-align:center; border-top:3px solid var(--sauge);">
         <div style="font-size:2.5rem; margin-bottom:1rem;">💻</div>
-        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">Consulta en Línea</h3>
-        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Videollamada · Google Meet</p>
-        <p style="color:var(--sauge); font-weight:600; font-size:1rem; margin-bottom:1.5rem;">Lunes a Viernes · 9h00 – 20h00</p>
-        <p style="color:var(--text-body); font-size:.9rem; line-height:1.6; margin-bottom:2rem;">Sesión por videollamada, desde cualquier lugar.</p>
-        <a href="https://calendly.com/caropsiclinica/consulta-psicologa-en-linea" 
-           target="_blank" rel="noopener"
-           style="display:inline-block; background:var(--sauge); color:white; font-family:'Source Sans 3',sans-serif; font-size:.95rem; font-weight:600; padding:.9rem 2rem; border-radius:2px; text-decoration:none; letter-spacing:.04em;"
-           onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-          Reservar en línea →
-        </a>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--petrole); margin-bottom:.5rem;">En Línea</h3>
+        <p style="color:#888; font-size:.9rem; margin-bottom:.5rem;">Google Meet</p>
+        <p style="color:var(--sauge); font-weight:600; font-size:.95rem;">Mar · Jue · Sáb · 9h–20h</p>
       </div>
-
     </div>
-
-    <!-- Responsive mobile -->
-    <style>
-    @media (max-width: 640px) {
-      .agenda-cards { grid-template-columns: 1fr !important; }
-    }
-    
-/* ── GOOGLE MAPS */
-.maps-container {
-  margin-top: 3rem;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 20px rgba(59,18,96,.08);
-}
-.maps-container iframe {
-  width: 100%;
-  height: 380px;
-  border: 0;
-  display: block;
-}
-.maps-caption {
-  background: white;
-  padding: 1.2rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.maps-caption-left {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-}
-.maps-pin {
-  width: 36px; height: 36px;
-  background: var(--terra);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.maps-pin svg { width: 18px; height: 18px; fill: white; }
-.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
-.maps-address strong { display: block; font-weight: 600; }
-.maps-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  background: var(--terra);
-  color: white;
-  font-size: .85rem;
-  font-weight: 600;
-  padding: .6rem 1.2rem;
-  border-radius: 2px;
-  text-decoration: none;
-  letter-spacing: .03em;
-  white-space: nowrap;
-  transition: opacity .2s;
-}
-.maps-link:hover { opacity: .85; }
-
-/* ── GOOGLE MAPS */
-.maps-container { margin-top: 3rem; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 20px rgba(59,18,96,.08); }
-.maps-container iframe { width: 100%; height: 380px; border: 0; display: block; }
-.maps-caption { background: white; padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.maps-caption-left { display: flex; align-items: center; gap: .8rem; }
-.maps-pin { width: 36px; height: 36px; background: var(--terra); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-.maps-pin svg { width: 18px; height: 18px; fill: white; }
-.maps-address { font-size: .95rem; color: var(--graphite); line-height: 1.5; }
-.maps-address strong { display: block; font-weight: 600; }
-.maps-link { display: inline-flex; align-items: center; gap: .4rem; background: var(--terra); color: white; font-size: .85rem; font-weight: 600; padding: .6rem 1.2rem; border-radius: 2px; text-decoration: none; transition: opacity .2s; }
-.maps-link:hover { opacity: .85; }
-</style>
+    <div style="margin-bottom:2rem;">
+      <a href="https://calendly.com/caropsiclinica/consulta-psicologa" target="_blank" rel="noopener"
+         style="display:inline-block; background:var(--terra); color:white; font-family:'Source Sans 3',sans-serif; font-size:1rem; font-weight:600; padding:1rem 2.5rem; border-radius:2px; text-decoration:none; letter-spacing:.04em;"
+         onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+        Reservar consulta →
+      </a>
+      <p style="margin-top:.8rem; font-size:.85rem; color:#888;">Selecciona tu modalidad preferida al reservar</p>
+    </div>
     
     <!-- Calendly inline widget como fallback -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
