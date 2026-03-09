@@ -929,7 +929,7 @@ body {
 .ct-cedula-text { font-size:.92rem; color:var(--text-mid); line-height:1.6; }
 .ct-cedula-text a { color:var(--terra); }
 
-.ct-social { display:flex; gap:.7rem; margin-top:2rem; }
+.ct-social { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2rem; }
 .ct-soc {
   padding:.65rem 1.1rem; border:1px solid var(--brume);
   font-size:.62rem; font-weight:400; letter-spacing:.1em; text-transform:uppercase;
@@ -2251,7 +2251,7 @@ footer {
         </div>
         <div class="ct-item">
           <div class="ct-label"><span class="es-text">Correo electrónico</span><span class="fr-text">E-mail</span></div>
-          <div class="ct-value"><a href="mailto:carolina@monterrubiopsicologa.com" style="color:var(--petrole);text-decoration:none;">carolina@monterrubiopsicologa.com</a></div>
+          <div class="ct-value"><span id="ctEmail"></span></div>
           <div class="ct-sub2"><span class="es-text">Respuesta en menos de 24 h</span><span class="fr-text">Réponse en moins de 24 h</span></div>
         </div>
         <div class="ct-item">
@@ -2264,14 +2264,7 @@ footer {
           <div class="ct-value">Español · Français</div>
         </div>
 
-        <div class="ct-cedula">
-          <div class="ct-cedula-title"><span class="es-text">Información profesional</span><span class="fr-text">Informations professionnelles</span></div>
-          <p class="ct-cedula-text">
-            <strong>Eunice Carolina Monterrubio Roché</strong> · <span class="es-text">Psicóloga Clínica</span><span class="fr-text">Psychologue Clinicienne</span><br>
-            <span class="es-text">Cédula profesional: [número a completar]</span><span class="fr-text">N° de cédule professionnelle : [à compléter]</span><br>
-            <a href="https://cedulaprofesional.sep.gob.mx" target="_blank" rel="noopener noreferrer"><span class="es-text">Verificar cédula en el registro oficial SEP →</span><span class="fr-text">Vérifier la cédule sur le registre officiel SEP →</span></a>
-          </p>
-        </div>
+
 
         <div class="ct-social">
           <a class="ct-soc" href="https://www.instagram.com/monterrubiopsicologa" target="_blank" rel="noopener" aria-label="Instagram">
@@ -2365,7 +2358,7 @@ footer {
 
 </main>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CURSOR STYLISÉ
 (function(){
   var dot = document.getElementById('curDot');
@@ -2474,7 +2467,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.addEventListener('scroll', onScroll, {passive:true});
   })();
+
+  // Email — construit en JS pour éviter encodage Cloudflare
+  (function(){
+    var u='carolina'; var d='monterrubiopsicologa.com';
+    var el=document.getElementById('ctEmail');
+    if(el){
+      var a=document.createElement('a');
+      a.href='mailto:'+u+'@'+d;
+      a.textContent=u+'@'+d;
+      a.style.cssText='color:var(--petrole);text-decoration:none;';
+      el.appendChild(a);
+    }
+  })();
+
+  // Boutons haut/bas
+  (function(){
+    var btnTop=document.getElementById('btnTop');
+    var btnBot=document.getElementById('btnBot');
+    if(!btnTop||!btnBot) return;
+    function upd(){
+      var s=window.scrollY, m=document.body.scrollHeight-window.innerHeight;
+      btnTop.style.opacity = s>100 ? '1' : '0.3';
+      btnBot.style.opacity = s<m-100 ? '1' : '0.3';
+    }
+    window.addEventListener('scroll',upd,{passive:true});
+    upd();
+  })();
+
 });
 </script>
+<style>
+.float-nav{position:fixed;bottom:24px;right:70px;display:flex;flex-direction:column;gap:.4rem;z-index:9000;}
+.float-nav-btn{width:34px;height:34px;border-radius:50%;background:var(--petrole);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.2);font-size:.8rem;opacity:.35;transition:transform .25s,background .2s,opacity .3s;}
+.float-nav-btn:hover{background:var(--terra);transform:scale(1.1);opacity:1!important;}
+@media(max-width:900px){.float-nav{right:58px;bottom:18px;}}
+@media(max-width:600px){.float-nav{right:48px;bottom:14px;}.float-nav-btn{width:28px;height:28px;font-size:.7rem;}}
+</style>
+<div class="float-nav">
+  <button class="float-nav-btn" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">▲</button>
+  <button class="float-nav-btn" id="btnBot" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="Ir al final">▼</button>
+</div>
 </body>
 </html>
