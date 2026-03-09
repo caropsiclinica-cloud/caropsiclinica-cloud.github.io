@@ -494,6 +494,31 @@ body {
   font-size:.58rem; letter-spacing:.18em; text-transform:uppercase;
   color:rgba(31,41,51,.28); text-align:center; line-height:1.9;
 }
+
+/* ── PHOTO CAROLINA ── */
+.carolina-photo {
+  position: absolute; inset: 0;
+  background-image: url('carolina.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  -webkit-user-select: none;
+  user-select: none;
+}
+.photo-protect {
+  position: absolute; inset: 0;
+  z-index: 2; cursor: default;
+  background: transparent;
+  -webkit-user-drag: none;
+}
+@media(max-width:900px){
+  .carolina-photo { background-position: center 15%; }
+}
+@media(max-width:600px){
+  .hero-photo { max-height: 65vw; overflow: hidden; }
+  .carolina-photo { background-position: center 10%; }
+}
 .photo-caption {
   position:relative; z-index:2; padding:2rem 2.5rem;
   background:linear-gradient(to top, rgba(14,58,64,.8) 0%, transparent 100%);
@@ -1659,13 +1684,10 @@ footer {
       </div>
     </div>
 
-    <div class="hero-photo" aria-hidden="true">
+    <div class="hero-photo">
       <div class="photo-area">
-        <div class="photo-box">
-          <div class="photo-box-inner">
-            <div class="photo-hint-icon">🖼</div>
-            <div class="photo-hint-txt"><span class="es-text">Tu fotografía<br>profesional aquí</span><span class="fr-text">Votre photo<br>professionnelle ici</span></div>
-          </div>
+        <div class="carolina-photo" role="img" aria-label="Carolina Monterrubio Roché — Psicóloga Clínica CDMX">
+          <div class="photo-protect"></div>
         </div>
       </div>
       <div class="photo-caption">
@@ -2498,11 +2520,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <style>
-.float-nav{position:fixed;bottom:24px;right:70px;display:flex;flex-direction:column;gap:.4rem;z-index:9000;}
+.float-nav{position:fixed;bottom:24px;right:120px;display:flex;flex-direction:column;gap:.4rem;z-index:9000;}
 .float-nav-btn{width:34px;height:34px;border-radius:50%;background:var(--petrole);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.2);font-size:.8rem;opacity:.35;transition:transform .25s,background .2s,opacity .3s;}
 .float-nav-btn:hover{background:var(--terra);transform:scale(1.1);opacity:1!important;}
-@media(max-width:900px){.float-nav{right:58px;bottom:18px;}}
-@media(max-width:600px){.float-nav{right:48px;bottom:14px;}.float-nav-btn{width:28px;height:28px;font-size:.7rem;}}
+@media(max-width:900px){.float-nav{right:100px;bottom:18px;}}
+@media(max-width:600px){.float-nav{right:80px;bottom:14px;}.float-nav-btn{width:28px;height:28px;font-size:.7rem;}}
 </style>
 <div class="float-nav">
   <button class="float-nav-btn" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">▲</button>
