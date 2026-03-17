@@ -733,6 +733,7 @@ body {
 }
 .exp-card-h { background:var(--terra); }
 .exp-card-j { background:var(--petrole); }
+.exp-card-s { background:var(--sauge); }
 .exp-card-bg {
   position:absolute; right:-1rem; top:-1rem;
   font-family:'Cormorant Garamond',serif; font-style:italic;
@@ -1663,20 +1664,14 @@ footer {
 
       <div class="hero-rule" aria-hidden="true"></div>
 
-      <p class="hero-intro">
-        <span class="es-text">Un espacio de escucha clínica, bilingüe y estructurado — para adultos que buscan comprender y transformar su sufrimiento psíquico, con una psicóloga formada en Francia y arraigada en México.</span><span class="fr-text">Un espace d'écoute clinique, bilingue et structuré — pour les adultes qui cherchent à comprendre et transformer leur souffrance psychique, avec une psychologue formée en France et ancrée au Mexique.</span>
+      <p class="hero-intro" style="font-size:1.18rem;font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.95;color:var(--petrole);max-width:600px;">
+        <span class="es-text">¿Sientes angustia o desgano? ¿problemas emocionales? ¿miedos? ¿inquietudes? ¿malestares físicos o emocionales? ¿sentimientos de frustración o de bloqueo? ¿o estás en búsqueda del sentido de la vida? A veces la vida nos lleva a vivir momentos de ruptura o de desencuentro, duelos, decepciones o comportamientos (nuestros o ajenos) que nos hacen sufrir y no sabemos qué hacer. Hay una salida y podemos construirla juntos.</span><span class="fr-text">Ressentez-vous de l'angoisse ou du découragement ? Des problèmes émotionnels ? Des peurs ? Des inquiétudes ? Des malaises physiques ou émotionnels ? Des sentiments de frustration ou de blocage ? Ou êtes-vous en quête de sens ? La vie nous amène parfois à traverser des moments de rupture ou de désaccord, des deuils, des déceptions ou des comportements — les nôtres ou ceux des autres — qui nous font souffrir sans que nous sachions quoi faire. Il existe une issue, et nous pouvons la construire ensemble.</span>
       </p>
 
       <div class="hero-pillars" aria-label="Compromisos">
         <div class="pillar"><div class="pillar-icon" aria-hidden="true">🔒</div><span class="es-text">Confidencial</span><span class="fr-text">Confidentiel</span></div>
         <div class="pillar"><div class="pillar-icon" aria-hidden="true">📐</div><span class="es-text">Marco claro</span><span class="fr-text">Cadre clair</span></div>
         <div class="pillar"><div class="pillar-icon" aria-hidden="true">🌍</div><span class="es-text">Bilingüe FR · ES</span><span class="fr-text">Bilingue FR · ES</span></div>
-      </div>
-
-      <div class="hero-degrees" aria-label="Formación">
-        <div class="degree"><span class="es-text">Master (MSc) en Psicología Clínica — Université Paris VIII</span><span class="fr-text">Master (MSc) en Psychologie Clinique — Université Paris VIII</span></div>
-        <div class="degree"><span class="es-text">Master (MSc) en Psicoanálisis — Université Paris VIII</span><span class="fr-text">Master (MSc) en Psychanalyse — Université Paris VIII</span></div>
-        <div class="degree"><span class="es-text">Licenciatura (Lic.) en Sociología — UAM Ciudad de México</span><span class="fr-text">Licence (Lic.) en Sociologie — UAM Ciudad de México</span></div>
       </div>
 
       <div class="hero-actions">
@@ -1703,9 +1698,15 @@ footer {
     <div class="sec-eyebrow reveal"><span class="es-text">Consultas</span><span class="fr-text">Consultations</span></div>
     <h2 class="sec-title reveal"><span class="es-text">¿Por qué <em>consultar?</em></span><span class="fr-text">Pourquoi <em>consulter ?</em></span></h2>
     <div class="divider reveal"></div>
-    <p class="reveal" style="font-size:.85rem;color:var(--text-body);max-width:580px;line-height:1.82;">
+    <p class="reveal" style="font-size:1.25rem;color:var(--petrole);max-width:620px;line-height:1.9;font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;">
       <span class="es-text">Consultar a un psicólogo no requiere una "crisis". Basta con sentir que algo pesa, que ciertos patrones se repiten, o que es momento de entenderse mejor.</span><span class="fr-text">Consulter un psychologue ne nécessite pas de "crise". Il suffit de sentir que quelque chose pèse, que certains schémas se répètent, ou qu'il est temps de mieux se comprendre.</span>
     </p>
+
+    <div class="reveal" style="border-left:2px solid var(--sauge);padding:1.2rem 1.6rem;margin:1.8rem 0;max-width:620px;background:rgba(155,107,181,.05);">
+      <p style="font-size:.95rem;color:var(--text-body);line-height:1.88;margin:0;">
+        <span class="es-text">Habrá un trabajo eficaz para tomar las mejores decisiones y darle un sentido a la existencia y vivir mejor. Te ofrezco un espacio de escucha y de construcción para desahogarse, descubrir y explorar. Un tiempo para sí mismo, para darse la oportunidad de abrirse y evolucionar. Para estar acompañado y dejar de sufrir.</span><span class="fr-text">Un travail efficace nous permettra de prendre les meilleures décisions, de donner un sens à l'existence et de mieux vivre. Je vous offre un espace d'écoute et de construction pour vous libérer, vous découvrir et explorer. Un temps pour soi, pour s'ouvrir et évoluer. Pour être accompagné et cesser de souffrir.</span>
+      </p>
+    </div>
 
     <div class="motifs-grid reveal">
       <div class="motif-item">
@@ -1813,40 +1814,20 @@ footer {
     <div class="approche-grid">
       <div class="approche-left">
         <div class="sec-eyebrow reveal"><span class="es-text">Enfoque clínico</span><span class="fr-text">Approche clinique</span></div>
-        <h2 class="sec-title reveal"><span class="es-text">Entre <em>lo íntimo</em><br>y lo social.</span><span class="fr-text">Entre <em>l'intime</em><br>et le social.</span></h2>
+        <h2 class="sec-title reveal"><span class="es-text">Un enfoque <em>integrativo.</em></span><span class="fr-text">Une approche <em>intégrative.</em></span></h2>
         <div class="divider reveal"></div>
-        <blockquote class="approche-quote reveal">
-          "Ni coaching, ni psychanalyse de salon — une psychologie clinique incarnée, bilingue et culturellement compétente."
-        </blockquote>
         <p class="approche-body reveal">
-          <span class="es-text">Mi práctica se ancla en la psicología clínica contemporánea: evaluación, objetivos, marco, seguimiento. La formación en psicoanálisis enriquece la escucha sin imponerle una etiqueta al proceso.</span><span class="fr-text">Ma pratique s'ancre dans la psychologie clinique contemporaine : évaluation, objectifs, cadre, suivi. La formation en psychanalyse enrichit l'écoute sans imposer d'étiquette au processus.</span>
+          <span class="es-text">Formada en diferentes enfoques terapéuticos, los adapto en función de las necesidades de mi paciente, con una escucha y acompañamiento empático.</span><span class="fr-text">Formée dans différentes orientations thérapeutiques, je les adapte en fonction des besoins de mon patient, avec une écoute et un accompagnement empathiques.</span>
         </p>
         <p class="approche-body reveal">
-          <span class="es-text">La sociología no es decoración: comprender el contexto social, los roles de género, las normas culturales y la historia de clase es parte del trabajo clínico. Esa es mi firma.</span><span class="fr-text">La sociologie n'est pas un ornement : comprendre le contexte social, les rôles de genre, les normes culturelles et l'histoire de classe fait partie du travail clinique. C'est ma signature.</span>
+          <span class="es-text">Hay un trabajo eficaz y profundo considerando los objetivos y necesidades acordadas inicialmente con el paciente. Estos objetivos, así como el enfoque terapéutico son revisados y ajustados periódicamente.</span><span class="fr-text">Il s'agit d'un travail efficace et approfondi, qui tient compte des objectifs et des besoins définis initialement avec le patient. Ces objectifs, ainsi que l'approche thérapeutique, sont régulièrement réexaminés et ajustés.</span>
         </p>
-        <div class="formation-tags reveal">
-          <div class="ftag">
-            <div class="ftag-flag">🇫🇷</div>
-            <div class="ftag-body">
-              <div class="ftag-title"><span class="es-text">Master (MSc) en Psicología Clínica</span><span class="fr-text">Master (MSc) en Psychologie Clinique</span></div>
-              <div class="ftag-sub">Université Paris 8 Vincennes–Saint-Denis</div>
-            </div>
-          </div>
-          <div class="ftag">
-            <div class="ftag-flag">🇫🇷</div>
-            <div class="ftag-body">
-              <div class="ftag-title"><span class="es-text">Master (MSc) en Psicoanálisis</span><span class="fr-text">Master (MSc) en Psychanalyse</span></div>
-              <div class="ftag-sub">Université Paris 8 Vincennes–Saint-Denis · <span class="es-text">Formación complementaria</span><span class="fr-text">Formation complémentaire</span></div>
-            </div>
-          </div>
-          <div class="ftag">
-            <div class="ftag-flag">🇲🇽</div>
-            <div class="ftag-body">
-              <div class="ftag-title"><span class="es-text">Licenciatura (Lic.) en Sociología</span><span class="fr-text">Licence (Lic.) en Sociologie</span></div>
-              <div class="ftag-sub"><span class="es-text">Universidad Autónoma Metropolitana · CDMX</span><span class="fr-text">Universidad Autónoma Metropolitana · CDMX</span></div>
-            </div>
-          </div>
+        <div class="reveal" style="margin-top:1.8rem;padding:1.2rem 1.6rem;border-left:2px solid var(--terra);background:rgba(107,45,139,.05);max-width:480px;">
+          <p style="font-size:1.15rem;color:var(--petrole);line-height:1.88;margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;">
+            <span class="es-text">Juntos decidiremos los objetivos y los métodos que trabajaremos en la terapia. Y los mismos, se irán reajustando conforme avancemos. Si tú así lo decides, ya no serás tú y tus problemas, sino tú y yo con soluciones y estrategias para afrontarlos juntos.</span><span class="fr-text">Ensemble, nous définirons les objectifs et les méthodes sur lesquels nous travaillerons en thérapie. Ceux-ci seront ajustés au fil du chemin. Si vous le décidez, ce ne sera plus vous face à vos problèmes, mais vous et moi, avec des solutions et des stratégies pour les affronter ensemble.</span>
+          </p>
         </div>
+
       </div>
 
       <div class="approche-right">
@@ -1886,6 +1867,142 @@ footer {
     </div>
   </section>
 
+  <!-- ════ TRAYECTORIA ════ -->
+  <section class="section" id="trayectoria" style="position:relative;overflow:hidden;">
+    <!-- SVG décoratif trayectoria -->
+    <svg aria-hidden="true" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:40px;right:30px;width:220px;height:220px;opacity:.07;pointer-events:none;">
+      <path d="M200 30 C280 60, 370 140, 340 220 C310 300, 200 350, 120 320 C40 290, 20 180, 60 110 C100 40, 160 10, 200 30Z" stroke="#6B2D8B" stroke-width="1.2" fill="none"/>
+      <path d="M200 70 C260 90, 330 160, 305 225 C280 290, 190 325, 130 300 C70 275, 55 185, 90 125 C125 65, 165 52, 200 70Z" stroke="#9B6BB5" stroke-width="0.7" fill="none"/>
+    </svg>
+    <div class="sec-eyebrow reveal"><span class="es-text">Trayectoria</span><span class="fr-text">Parcours</span></div>
+    <h2 class="sec-title reveal"><span class="es-text">Formada en <em>dos mundos.</em></span><span class="fr-text">Formée dans <em>deux mondes.</em></span></h2>
+    <div class="divider reveal"></div>
+
+    <div class="exp-cards reveal">
+      <div class="exp-card exp-card-h">
+        <div class="exp-card-bg" aria-hidden="true">I</div>
+        <span class="ec-icon">🏥</span>
+        <div class="ec-title"><span class="es-text">Psicóloga clínica — Hospital psiquiátrico, Francia</span><span class="fr-text">Psychologue clinicienne — Hôpital psychiatrique, France</span></div>
+        <p class="ec-text"><span class="es-text">Ejercicio clínico en entorno hospitalario psiquiátrico francés. Evaluación, seguimiento y acompañamiento de pacientes con patologías severas, en equipos pluridisciplinarios.</span><span class="fr-text">Exercice clinique en milieu hospitalier psychiatrique français. Évaluation, suivi et accompagnement de patients avec des pathologies sévères, au sein d'équipes pluridisciplinaires.</span></p>
+        <span class="ec-tag"><span class="es-text">Experiencia hospitalaria</span><span class="fr-text">Expérience hospitalière</span></span>
+      </div>
+      <div class="exp-card exp-card-s">
+        <div class="exp-card-bg" aria-hidden="true">II</div>
+        <span class="ec-icon">⚖️</span>
+        <div class="ec-title"><span class="es-text">Perito psicológico ante los tribunales — Francia</span><span class="fr-text">Experte psychologique près les tribunaux — France</span></div>
+        <p class="ec-text"><span class="es-text">Designada perita oficial por la justicia francesa. Evaluaciones, redacción de informes periciales y comparecencias ante la corte.</span><span class="fr-text">Désignée experte officielle par la justice française. Évaluations, rédaction de rapports d'expertise et comparutions devant la cour.</span></p>
+        <span class="ec-tag"><span class="es-text">Peritaje judicial</span><span class="fr-text">Expertise judiciaire</span></span>
+      </div>
+      <div class="exp-card exp-card-h">
+        <div class="exp-card-bg" aria-hidden="true">III</div>
+        <span class="ec-icon">🏛️</span>
+        <div class="ec-title"><span class="es-text">Perito en Psicología Forense — Fiscalía General de Justicia · CDMX, México</span><span class="fr-text">Expert en Psychologie Légale — Fiscalía General de Justicia · CDMX, Mexique</span></div>
+        <p class="ec-text"><span class="es-text">Redacción de dictámenes y aplicación de tests psicométricos para la atención pericial a víctimas.</span><span class="fr-text">Rédaction de rapports d'expertise et administration de tests psychométriques dans le cadre de l'assistance aux victimes.</span></p>
+        <span class="ec-tag"><span class="es-text">Peritaje forense · CDMX</span><span class="fr-text">Expertise légale · CDMX</span></span>
+      </div>
+      <div class="exp-card exp-card-s">
+        <div class="exp-card-bg" aria-hidden="true">IV</div>
+        <span class="ec-icon">🏢</span>
+        <div class="ec-title"><span class="es-text">Consulta Privada — CDMX, México · y en línea</span><span class="fr-text">Cabinet Privé — CDMX, Mexique · et en ligne</span></div>
+        <p class="ec-text"><span class="es-text">Acompañamiento psicológico clínico individual y de pareja. Atención presencial en CDMX y en línea, en español y en francés.</span><span class="fr-text">Accompagnement psychologique clinique individuel et de couple. Consultations en présentiel à CDMX et en ligne, en espagnol et en français.</span></p>
+        <span class="ec-tag"><span class="es-text">Consulta privada · CDMX</span><span class="fr-text">Cabinet privé · CDMX</span></span>
+      </div>
+      <div class="exp-card exp-card-h">
+        <div class="exp-card-bg" aria-hidden="true">V</div>
+        <span class="ec-icon">📊</span>
+        <div class="ec-title"><span class="es-text">Consultorías Psicológicas para Empresas — México</span><span class="fr-text">Consultance Psychologique en Entreprise — Mexique</span></div>
+        <p class="ec-text"><span class="es-text">Disminución de la rotación · NOM-035 · Mejora de la calidad de vida de los trabajadores y del rendimiento laboral.</span><span class="fr-text">Réduction du turn-over · NOM-035 · Amélioration de la qualité de vie au travail et de la performance des équipes.</span></p>
+        <span class="ec-tag"><span class="es-text">Bienestar laboral · NOM-035</span><span class="fr-text">Bien-être au travail · NOM-035</span></span>
+      </div>
+      <div class="exp-card exp-card-s">
+        <div class="exp-card-bg" aria-hidden="true">VI</div>
+        <span class="ec-icon">🎓</span>
+        <div class="ec-title"><span class="es-text">Docencia y Capacitación — Asociación Esferas de Libertad A.C. · México</span><span class="fr-text">Enseignement et Formation — Asociación Esferas de Libertad A.C. · Mexique</span></div>
+        <p class="ec-text"><span class="es-text">Diseño e impartición de cursos con metodologías didácticas activas · Desarrollo de materiales pedagógicos y dinámicas grupales · Facilitación de talleres orientados al desarrollo personal y habilidades sociales.</span><span class="fr-text">Conception et animation de cours avec des méthodologies actives · Développement de supports pédagogiques et de dynamiques de groupe · Facilitation d'ateliers axés sur le développement personnel et les compétences sociales.</span></p>
+        <span class="ec-tag"><span class="es-text">Docencia · Formación</span><span class="fr-text">Enseignement · Formation</span></span>
+      </div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-date">CDMX</div>
+        <div class="tl-body">
+          <div class="tl-title"><span class="es-text">Licenciatura (Lic.) en Sociología</span><span class="fr-text">Licence (Lic.) en Sociologie</span></div>
+          <div class="tl-inst"><span class="es-text">Universidad Autónoma Metropolitana (UAM)</span><span class="fr-text">Universidad Autónoma Metropolitana (UAM)</span></div>
+          <div class="tl-desc"><span class="es-text">Base crítica en ciencias sociales: sociología del género, contextos de clase, historia cultural mexicana. Una formación que hace única la lectura clínica del sujeto.</span><span class="fr-text">Base critique en sciences sociales : sociologie du genre, contextes de classe, histoire culturelle mexicaine. Une formation qui rend unique la lecture clinique du sujet.</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">París</div>
+        <div class="tl-body">
+          <div class="tl-title"><span class="es-text">Licenciatura (Lic.) en Psicología</span><span class="fr-text">Licence (Lic.) en Psychologie</span></div>
+          <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
+          <div class="tl-desc"><span class="es-text">Formación universitaria en psicología general, base del posterior doble máster clínico y psicoanalítico.</span><span class="fr-text">Formation universitaire en psychologie générale, socle du double master clinique et psychanalytique.</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">París</div>
+        <div class="tl-body">
+          <div class="tl-title"><span class="es-text">Master (MSc) en Psicología Clínica</span><span class="fr-text">Master (MSc) en Psychologie Clinique</span></div>
+          <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
+          <div class="tl-desc"><span class="es-text">Formación de alto nivel en evaluación clínica, psicopatología y acompañamiento psicoterapéutico. Una de las universidades de referencia en ciencias humanas y sociales en Francia.</span><span class="fr-text">Formation de haut niveau en évaluation clinique, psychopathologie et accompagnement psychothérapeutique. L'une des universités de référence en sciences humaines et sociales en France.</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">París</div>
+        <div class="tl-body">
+          <div class="tl-title"><span class="es-text">Master (MSc) en Psicoanálisis</span><span class="fr-text">Master (MSc) en Psychanalyse</span></div>
+          <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
+          <div class="tl-desc"><span class="es-text">Formación avanzada en teoría psicoanalítica (Freud, Lacan). Complemento teórico que enriquece la práctica clínica sin definirla.</span><span class="fr-text">Formation avancée en théorie psychanalytique (Freud, Lacan). Complément théorique qui enrichit la pratique clinique sans la définir.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SERVICES ════ -->
+  <section class="section" id="servicios">
+    <div class="svc-intro-grid">
+      <div>
+        <div class="sec-eyebrow reveal"><span class="es-text">Espacios de escucha</span><span class="fr-text">Espaces d'écoute</span></div>
+        <h2 class="sec-title reveal"><span class="es-text"><em>Servicios.</em></span><span class="fr-text"><em>Services.</em></span></h2>
+      </div>
+    </div>
+
+    <div class="svc-list reveal">
+      <div class="svc-item">
+        <div>
+          <div class="svc-item-name"><span class="es-text">Terapia individual</span><span class="fr-text">Thérapie individuelle</span></div>
+          <div class="svc-item-desc"><span class="es-text">Acompañamiento clínico especializado de trastornos del estado de ánimo. Experiencia hospitalaria que permite trabajar situaciones de mayor complejidad.</span><span class="fr-text">Accompagnement clinique spécialisé des troubles de l'humeur. Expérience hospitalière permettant de travailler des situations de plus grande complexité.</span></div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="svc-item">
+        <div>
+          <div class="svc-item-name"><span class="es-text">Terapia de pareja</span><span class="fr-text">Thérapie de couple</span></div>
+          <div class="svc-item-desc"><span class="es-text">Crisis, comunicación, ruptura o el deseo de crecer juntos. Un espacio para los dos, con un tercer lugar neutro.</span><span class="fr-text">Crise, communication, rupture ou désir de grandir ensemble. Un espace pour les deux, avec un tiers neutre.</span></div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+      <div class="svc-item">
+        <div>
+          <div class="svc-item-name"><span class="es-text">Consultoría Privada a Empresas</span><span class="fr-text">Consultance Privée en Entreprise</span></div>
+          <div class="svc-item-desc"><span class="es-text">Sesiones individuales y talleres grupales de bienestar laboral. Acompañamiento para el cumplimiento de la <strong>NOM-035-STPS-2018</strong>.</span><span class="fr-text">Séances individuelles et ateliers collectifs de bien-être au travail. Accompagnement pour la conformité à la <strong>NOM-035-STPS-2018</strong>.</span></div>
+        </div>
+        <div class="svc-arrow">→</div>
+      </div>
+    </div>
+
+    <div class="svc-tags reveal">
+      <span class="tag tag-solid"><span class="es-text">Adultos</span><span class="fr-text">Adultes</span></span>
+      <span class="tag tag-solid"><span class="es-text">Jóvenes adultos</span><span class="fr-text">Jeunes adultes</span></span>
+      <span class="tag tag-terra"><span class="es-text">Pareja</span><span class="fr-text">Couple</span></span>
+      <span class="tag tag-sauge">Español · Français</span>
+      <span class="tag tag-outline"><span class="es-text">Presencial CDMX</span><span class="fr-text">Présentiel CDMX</span></span>
+      <span class="tag tag-outline">Online</span>
+    </div>
+  </section>
+
+
   <!-- ════ BILINGUE ════ -->
   <section id="bilingue">
     <div class="bilingue-inner">
@@ -1919,147 +2036,7 @@ footer {
             <div class="bil-lang-role"><span class="es-text">Formación y práctica clínica · Todos los formatos</span><span class="fr-text">Formation & pratique clinique · Tous formats</span></div>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- ════ TRAYECTORIA ════ -->
-  <section class="section" id="trayectoria" style="position:relative;overflow:hidden;">
-    <!-- SVG décoratif trayectoria -->
-    <svg aria-hidden="true" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:40px;right:30px;width:220px;height:220px;opacity:.07;pointer-events:none;">
-      <path d="M200 30 C280 60, 370 140, 340 220 C310 300, 200 350, 120 320 C40 290, 20 180, 60 110 C100 40, 160 10, 200 30Z" stroke="#6B2D8B" stroke-width="1.2" fill="none"/>
-      <path d="M200 70 C260 90, 330 160, 305 225 C280 290, 190 325, 130 300 C70 275, 55 185, 90 125 C125 65, 165 52, 200 70Z" stroke="#9B6BB5" stroke-width="0.7" fill="none"/>
-    </svg>
-    <div class="sec-eyebrow reveal"><span class="es-text">Trayectoria</span><span class="fr-text">Parcours</span></div>
-    <h2 class="sec-title reveal"><span class="es-text">Formada en <em>dos mundos.</em></span><span class="fr-text">Formée dans <em>deux mondes.</em></span></h2>
-    <div class="divider reveal"></div>
-
-    <div class="exp-cards reveal">
-      <div class="exp-card exp-card-h">
-        <div class="exp-card-bg" aria-hidden="true">I</div>
-        <span class="ec-icon">🏥</span>
-        <div class="ec-title"><span class="es-text">Psicóloga clínica — Hospital psiquiátrico, Francia</span><span class="fr-text">Psychologue clinicienne — Hôpital psychiatrique, France</span></div>
-        <p class="ec-text"><span class="es-text">Ejercicio clínico en entorno hospitalario psiquiátrico francés. Evaluación, seguimiento y acompañamiento de pacientes con patologías severas, en equipos pluridisciplinarios.</span><span class="fr-text">Exercice clinique en milieu hospitalier psychiatrique français. Évaluation, suivi et accompagnement de patients avec des pathologies sévères, au sein d'équipes pluridisciplinaires.</span></p>
-        <span class="ec-tag"><span class="es-text">Experiencia hospitalaria</span><span class="fr-text">Expérience hospitalière</span></span>
-      </div>
-      <div class="exp-card exp-card-j">
-        <div class="exp-card-bg" aria-hidden="true">II</div>
-        <span class="ec-icon">⚖️</span>
-        <div class="ec-title"><span class="es-text">Experta psicológica ante los tribunales — Francia</span><span class="fr-text">Experte psychologique près les tribunaux — France</span></div>
-        <p class="ec-text"><span class="es-text">Designada perita oficial por la justicia francesa. Evaluaciones, redacción de informes periciales y comparecencias ante la corte. Un reconocimiento excepcional de rigor profesional.</span><span class="fr-text">Désignée experte officielle par la justice française. Évaluations, rédaction de rapports d'expertise et comparutions devant la cour. Une reconnaissance exceptionnelle de rigueur professionnelle.</span></p>
-        <span class="ec-tag"><span class="es-text">Peritaje judicial</span><span class="fr-text">Expertise judiciaire</span></span>
-      </div>
-    </div>
-
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <div class="tl-date">CDMX</div>
-        <div class="tl-body">
-          <div class="tl-title"><span class="es-text">Licenciatura (Lic.) en Sociología</span><span class="fr-text">Licence (Lic.) en Sociologie</span></div>
-          <div class="tl-inst"><span class="es-text">Universidad Autónoma Metropolitana (UAM)</span><span class="fr-text">Universidad Autónoma Metropolitana (UAM)</span></div>
-          <div class="tl-desc"><span class="es-text">Base crítica en ciencias sociales: sociología del género, contextos de clase, historia cultural mexicana. Una formación que hace única la lectura clínica del sujeto.</span><span class="fr-text">Base critique en sciences sociales : sociologie du genre, contextes de classe, histoire culturelle mexicaine. Une formation qui rend unique la lecture clinique du sujet.</span></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">París</div>
-        <div class="tl-body">
-          <div class="tl-title"><span class="es-text">Master (MSc) en Psicología Clínica</span><span class="fr-text">Master (MSc) en Psychologie Clinique</span></div>
-          <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
-          <div class="tl-desc"><span class="es-text">Formación de alto nivel en evaluación clínica, psicopatología y acompañamiento psicoterapéutico. La universidad de referencia en ciencias humanas y sociales en Francia.</span><span class="fr-text">Formation de haut niveau en évaluation clinique, psychopathologie et accompagnement psychothérapeutique. L'université de référence en sciences humaines et sociales en France.</span></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">París</div>
-        <div class="tl-body">
-          <div class="tl-title"><span class="es-text">Master (MSc) en Psicoanálisis</span><span class="fr-text">Master (MSc) en Psychanalyse</span></div>
-          <div class="tl-inst">Université Paris 8 Vincennes–Saint-Denis</div>
-          <div class="tl-desc"><span class="es-text">Formación avanzada en teoría psicoanalítica (Freud, Lacan). Complemento teórico que enriquece la práctica clínica sin definirla.</span><span class="fr-text">Formation avancée en théorie psychanalytique (Freud, Lacan). Complément théorique qui enrichit la pratique clinique sans la définir.</span></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Francia</div>
-        <div class="tl-body">
-          <div class="tl-title"><span class="es-text">Ejercicio clínico hospitalario & pericial</span><span class="fr-text">Exercice clinique hospitalier & d'expertise</span></div>
-          <div class="tl-inst"><span class="es-text">Hospital psiquiátrico · Tribunales franceses</span><span class="fr-text">Hôpital psychiatrique · Tribunaux français</span></div>
-          <div class="tl-desc"><span class="es-text">Años de práctica en contextos institucionales exigentes: psiquiatría hospitalaria y peritaje judicial. Una experiencia que pocos profesionales tienen.</span><span class="fr-text">Années de pratique dans des contextes institutionnels exigeants : psychiatrie hospitalière et expertise judiciaire. Une expérience que peu de professionnels possèdent.</span></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Hoy</div>
-        <div class="tl-body">
-          <div class="tl-title"><span class="es-text">Consulta privada — Ciudad de México</span><span class="fr-text">Cabinet privé — Ciudad de México</span></div>
-          <div class="tl-inst"><span class="es-text">CDMX · Presencial & Online · ES · FR</span><span class="fr-text">CDMX · Présentiel & En ligne · ES · FR</span></div>
-          <div class="tl-desc"><span class="es-text">De regreso en su ciudad, ofrece acompañamiento psicológico clínico de calidad europea, con sensibilidad mexicana y mirada intercultural.</span><span class="fr-text">De retour dans sa ville, elle offre un accompagnement psychologique clinique de qualité européenne, avec une sensibilité mexicaine et un regard interculturel.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════ SERVICES ════ -->
-  <section class="section" id="servicios">
-    <div class="svc-intro-grid">
-      <div>
-        <div class="sec-eyebrow reveal"><span class="es-text">Servicios</span><span class="fr-text">Services</span></div>
-        <h2 class="sec-title reveal"><span class="es-text">Espacios de <em>escucha.</em></span><span class="fr-text">Espaces <em>d'écoute.</em></span></h2>
-      </div>
-      <p class="svc-intro-text reveal">
-        <span class="es-text">Cada consulta es un espacio seguro, confidencial y sin juicios. La terapia no promete soluciones rápidas — ofrece un marco para comprender y transformar.</span><span class="fr-text">Chaque consultation est un espace sûr, confidentiel et sans jugement. La thérapie ne promet pas de solutions rapides — elle offre un cadre pour comprendre et transformer.</span>
-      </p>
-    </div>
-
-    <div class="svc-list reveal">
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Terapia individual</span><span class="fr-text">Thérapie individuelle</span></div>
-          <div class="svc-item-desc"><span class="es-text">Para adultos y jóvenes adultos. Proceso de autoconocimiento, elaboración de conflictos psíquicos y cambio de patrones. 50 min · frecuencia a acordar.</span><span class="fr-text">Pour adultes et jeunes adultes. Processus de connaissance de soi, élaboration de conflits psychiques et changement de schémas. 50 min · fréquence à convenir.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Ansiedad, depresión & burnout</span><span class="fr-text">Anxiété, dépression & burnout</span></div>
-          <div class="svc-item-desc"><span class="es-text">Acompañamiento clínico especializado de trastornos del estado de ánimo. Experiencia hospitalaria que permite trabajar situaciones de mayor complejidad.</span><span class="fr-text">Accompagnement clinique spécialisé des troubles de l'humeur. Expérience hospitalière permettant de travailler des situations de plus grande complexité.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Terapia de pareja</span><span class="fr-text">Thérapie de couple</span></div>
-          <div class="svc-item-desc"><span class="es-text">Crisis, comunicación, ruptura o el deseo de crecer juntos. Un espacio para los dos, con un tercer lugar neutro.</span><span class="fr-text">Crise, communication, rupture ou désir de grandir ensemble. Un espace pour les deux, avec un tiers neutre.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Sesiones en línea</span><span class="fr-text">Séances en ligne</span></div>
-          <div class="svc-item-desc"><span class="es-text">La misma calidad clínica, desde donde estés. México, Francia, cualquier país hispano o francófono. Español · Français.</span><span class="fr-text">La même qualité clinique, depuis n'importe où. Mexique, France, tout pays hispanophone ou francophone. Español · Français.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Peritaje psicológico</span><span class="fr-text">Expertise psychologique</span></div>
-          <div class="svc-item-desc"><span class="es-text">Evaluaciones e informes periciales a petición. Experiencia como experta oficial ante los tribunales franceses.</span><span class="fr-text">Évaluations et rapports d'expertise sur demande. Expérience en tant qu'experte officielle près les tribunaux français.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-      <div class="svc-item">
-        <div>
-          <div class="svc-item-name"><span class="es-text">Psicología en el trabajo — Empresas</span><span class="fr-text">Psychologie au travail — Entreprises</span></div>
-          <div class="svc-item-desc"><span class="es-text">Sesiones individuales y talleres grupales de bienestar laboral. Acompañamiento para el cumplimiento de la <strong>NOM-035-STPS-2018</strong> — la norma mexicana que obliga a las empresas a identificar y prevenir riesgos psicosociales. Experiencia con empresas en México.</span><span class="fr-text">Séances individuelles et ateliers collectifs de bien-être au travail. Accompagnement pour la conformité à la <strong>NOM-035-STPS-2018</strong> — la norme mexicaine qui oblige les entreprises à identifier et prévenir les risques psychosociaux. Expérience avec des entreprises au Mexique.</span></div>
-        </div>
-        <div class="svc-arrow">→</div>
-      </div>
-    </div>
-
-    <div class="svc-tags reveal">
-      <span class="tag tag-solid"><span class="es-text">Adultos</span><span class="fr-text">Adultes</span></span>
-      <span class="tag tag-solid"><span class="es-text">Jóvenes adultos</span><span class="fr-text">Jeunes adultes</span></span>
-      <span class="tag tag-terra"><span class="es-text">Pareja</span><span class="fr-text">Couple</span></span>
-      <span class="tag tag-sauge">Español · Français</span>
-      <span class="tag tag-outline"><span class="es-text">Presencial CDMX</span><span class="fr-text">Présentiel CDMX</span></span>
-      <span class="tag tag-outline">Online</span>
     </div>
   </section>
 
